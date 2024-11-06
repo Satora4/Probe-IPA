@@ -19,6 +19,41 @@
 
 \refsection{0}
   \datalist[entry]{nyt/global//global/global/global}
+    \entry{ict}{ook}{}{}
+      \name{author}{1}{}{%
+        {{un=0,uniquepart=base,hash=b478ebcdb605fdd450fbf207700e34f2}{%
+           family={Bern},
+           familyi={B\bibinitperiod},
+           given={ICT\bibnamedelima Berufsbildung},
+           giveni={I\bibinitperiod\bibinitdelim B\bibinitperiod},
+           givenun=0}}%
+      }
+      \strng{namehash}{b478ebcdb605fdd450fbf207700e34f2}
+      \strng{fullhash}{b478ebcdb605fdd450fbf207700e34f2}
+      \strng{fullhashraw}{b478ebcdb605fdd450fbf207700e34f2}
+      \strng{bibnamehash}{b478ebcdb605fdd450fbf207700e34f2}
+      \strng{authorbibnamehash}{b478ebcdb605fdd450fbf207700e34f2}
+      \strng{authornamehash}{b478ebcdb605fdd450fbf207700e34f2}
+      \strng{authorfullhash}{b478ebcdb605fdd450fbf207700e34f2}
+      \strng{authorfullhashraw}{b478ebcdb605fdd450fbf207700e34f2}
+      \field{sortinit}{B}
+      \field{sortinithash}{d7095fff47cda75ca2589920aae98399}
+      \field{extradatescope}{labelyear}
+      \field{labeldatesource}{url}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{title}{Die 6-Schittmethode IPERKA.}
+      \field{urlday}{6}
+      \field{urlmonth}{11}
+      \field{urlyear}{2024}
+      \field{urldateera}{ce}
+      \verb{urlraw}
+      \verb https://www.ict-berufsbildung-bern.ch/resources/Iperka_OdA_200617.pdf
+      \endverb
+      \verb{url}
+      \verb https://www.ict-berufsbildung-bern.ch/resources/Iperka_OdA_200617.pdf
+      \endverb
+    \endentry
     \entry{ergonlogo}{misc}{}{}
       \name{author}{1}{}{%
         {{un=0,uniquepart=base,hash=0d19965a22e594c828e50cd0ea5b452c}{%
