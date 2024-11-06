@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.26 (TeX Live 2024) (preloaded format=pdflatex 2024.8.9)  6 NOV 2024 17:09
+This is pdfTeX, Version 3.141592653-2.6-1.40.26 (TeX Live 2024) (preloaded format=pdflatex 2024.8.9)  6 NOV 2024 17:24
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1313,22 +1313,22 @@ de für die-se Projektmanagement-
 [14]
 Kapitel 7.
 
-Underfull \hbox (badness 10000) in paragraph at lines 13--13
+Underfull \hbox (badness 10000) in paragraph at lines 14--14
 []|\T1/cmr/bx/n/10.95 Vergleich mit
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 15--15
+Underfull \hbox (badness 10000) in paragraph at lines 16--16
 []|\T1/cmr/bx/n/10.95 Erfolge und
  []
 
 
-Overfull \hbox (12.29646pt too wide) in paragraph at lines 18--18
+Overfull \hbox (12.29646pt too wide) in paragraph at lines 19--19
 []|\T1/cmr/bx/n/10.95 Tageasdfsreflexion| 
  []
 
 
-Overfull \hbox (23.99998pt too wide) in alignment at lines 3--23
+Overfull \hbox (23.99998pt too wide) in alignment at lines 4--24
  [] [] 
  []
 
@@ -1336,9 +1336,26 @@ Overfull \hbox (23.99998pt too wide) in alignment at lines 3--23
 
 [15
 
-]) (./teil_2/projekt.tex
+]
+Underfull \hbox (badness 1005) in paragraph at lines 31--31
+[]|\T1/cmr/bx/n/10.95 Bearbeitete Ar-
+ []
 
-[16
+
+Underfull \hbox (badness 10000) in paragraph at lines 37--37
+[]|\T1/cmr/bx/n/10.95 Vergleich mit
+ []
+
+
+Overfull \hbox (27.94934pt too wide) in alignment at lines 27--47
+ [] [] 
+ []
+
+
+
+[16]) (./teil_2/projekt.tex
+
+[17
 
 ]) (./global/glossar.tex (./main.gls)) (./global/abbildungsverzeichnis.tex
 (./main.lof)
@@ -1347,7 +1364,7 @@ Overfull \hbox (23.99998pt too wide) in alignment at lines 3--23
 
 ) (./global/quellenverzeichnis.tex
 
-[17
+[18
 
 
 ]
@@ -1357,7 +1374,7 @@ Package biblatex Warning: No driver for 'ook'.
 
 )
 
-[18
+[19
 
 ] 
 enddocument/afterlastpage: lastpage setting LastPage.
@@ -1373,10 +1390,10 @@ Package logreq Info: Writing requests to 'main.run.xml'.
 
  ) 
 Here is how much of TeX's memory you used:
- 33104 strings out of 473579
- 597055 string characters out of 5732264
+ 33108 strings out of 473579
+ 597109 string characters out of 5732264
  1949960 words of memory out of 5000000
- 55456 multiletter control sequences out of 15000+600000
+ 55458 multiletter control sequences out of 15000+600000
  575899 words of font info for 74 fonts, out of 8000000 for 9000
  1143 hyphenation exceptions out of 8191
  109i,11n,107p,2373b,2463s stack positions out of 10000i,1000n,20000p,200000b,200000s
@@ -1394,10 +1411,10 @@ fonts/type1/public/cm-super/sfrm1200.pfb><c:/texlive/2024/texmf-dist/fonts/type
 1/public/cm-super/sfrm1440.pfb><c:/texlive/2024/texmf-dist/fonts/type1/public/c
 m-super/sfti1095.pfb><c:/texlive/2024/texmf-dist/fonts/type1/public/cm-super/sf
 tt1095.pfb>
-Output written on main.pdf (19 pages, 582298 bytes).
+Output written on main.pdf (20 pages, 583767 bytes).
 PDF statistics:
- 395 PDF objects out of 1000 (max. 8388607)
- 333 compressed objects within 4 object streams
- 66 named destinations out of 1000 (max. 500000)
+ 401 PDF objects out of 1000 (max. 8388607)
+ 338 compressed objects within 4 object streams
+ 68 named destinations out of 1000 (max. 500000)
  237 words of extra memory for PDF output out of 10000 (max. 10000000)
 
