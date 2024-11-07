@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.26 (TeX Live 2024) (preloaded format=pdflatex 2024.8.9)  7 NOV 2024 13:06
+This is pdfTeX, Version 3.141592653-2.6-1.40.26 (TeX Live 2024) (preloaded format=pdflatex 2024.8.9)  7 NOV 2024 16:03
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1099,7 +1099,7 @@ Package biblatex Info: Reference section=0 on input line 97.
 Package biblatex Info: Reference segment=0 on input line 97.
 
 (./titel.tex
-<ressourcen/ergon_logo_gross.png, id=168, 556.2381pt x 118.7637pt>
+<ressourcen/ergon_logo_gross.png, id=200, 556.2381pt x 118.7637pt>
 File: ressourcen/ergon_logo_gross.png Graphic file (type png)
 <use ressourcen/ergon_logo_gross.png>
 Package pdftex.def Info: ressourcen/ergon_logo_gross.png  used on input line 5.
@@ -1153,7 +1153,7 @@ el und ei-ne Anmelde-Plattform
 
 
 [5]
-<ressourcen/show-and-edit-tasks.png, id=259, 2569.6pt x 574.145pt>
+<ressourcen/show-and-edit-tasks.png, id=299, 2569.6pt x 574.145pt>
 File: ressourcen/show-and-edit-tasks.png Graphic file (type png)
 <use ressourcen/show-and-edit-tasks.png>
 Package pdftex.def Info: ressourcen/show-and-edit-tasks.png  used on input line
@@ -1197,7 +1197,7 @@ Overfull \hbox (14.7876pt too wide) in paragraph at lines 7--8
 , wel-ches mit-hil-fe ei-ner Dockings-
  []
 
-<ressourcen/Arbeitsplatz-Joel-Vontobel.jpg, id=280, 1606.0pt x 903.375pt>
+<ressourcen/Arbeitsplatz-Joel-Vontobel.jpg, id=320, 1606.0pt x 903.375pt>
 File: ressourcen/Arbeitsplatz-Joel-Vontobel.jpg Graphic file (type jpg)
 <use ressourcen/Arbeitsplatz-Joel-Vontobel.jpg>
 Package pdftex.def Info: ressourcen/Arbeitsplatz-Joel-Vontobel.jpg  used on inp
@@ -1227,52 +1227,52 @@ Underfull \hbox (badness 10000) in paragraph at lines 28--28
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 29--29
-[]|[]$\T1/cmtt/m/n/10.95 https : / / www . atlassian . com /
- []
-
-
 Underfull \hbox (badness 10000) in paragraph at lines 30--30
 []|[]$\T1/cmtt/m/n/10.95 https : / / www . atlassian . com /
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 33--33
+Underfull \hbox (badness 10000) in paragraph at lines 31--31
+[]|[]$\T1/cmtt/m/n/10.95 https : / / www . atlassian . com /
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 34--34
 []|\T1/cmr/m/n/10.95 Ein Do-ku-men-ten-vor-be-rei-tungs-
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 33--33
+Underfull \hbox (badness 10000) in paragraph at lines 34--34
 []|[]$\T1/cmtt/m/n/10.95 https : / / www . latex-[]project .
  []
 
 
-Underfull \hbox (badness 1297) in paragraph at lines 35--35
+Underfull \hbox (badness 1297) in paragraph at lines 36--36
 []|\T1/cmr/m/n/10.95 Video ba-sier-tes Kom-mu-ni-ka-tio-
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 35--35
+Underfull \hbox (badness 10000) in paragraph at lines 36--36
 []|[]$\T1/cmtt/m/n/10.95 https : / / www . microsoft . com /
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 35--35
+Underfull \hbox (badness 10000) in paragraph at lines 36--36
 \T1/cmtt/m/n/10.95 de-[]ch / microsoft-[]teams /
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 36--36
+Underfull \hbox (badness 10000) in paragraph at lines 37--37
 []|[]$\T1/cmtt/m/n/10.95 https : / / www . microsoft . com /
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 36--36
+Underfull \hbox (badness 10000) in paragraph at lines 37--37
 \T1/cmtt/m/n/10.95 de-[]ch / microsoft-[]365 / excel ?
  []
 
 
-Overfull \hbox (35.99997pt too wide) in alignment at lines 21--37
+Overfull \hbox (35.99997pt too wide) in alignment at lines 21--38
  [] [] [] 
  []
 
@@ -1280,7 +1280,7 @@ Overfull \hbox (35.99997pt too wide) in alignment at lines 21--37
 
 [10]) (./teil_1/versionierung_und_sicherung_der_arbeitsergebnisse.tex
 Kapitel 5.
-<ressourcen/placeholder.png, id=315, 683.55376pt x 529.98pt>
+<ressourcen/placeholder.png, id=356, 683.55376pt x 529.98pt>
 File: ressourcen/placeholder.png Graphic file (type png)
 <use ressourcen/placeholder.png>
 Package pdftex.def Info: ressourcen/placeholder.png  used on input line 12.
@@ -1372,7 +1372,7 @@ Kapitel 9.
 [20
 
 ]
-<ressourcen/Ablaufdiagramm.png, id=367, 462.72874pt x 230.8625pt>
+<ressourcen/Ablaufdiagramm.png, id=408, 462.72874pt x 230.8625pt>
 File: ressourcen/Ablaufdiagramm.png Graphic file (type png)
 <use ressourcen/Ablaufdiagramm.png>
 Package pdftex.def Info: ressourcen/Ablaufdiagramm.png  used on input line 27.
@@ -1492,32 +1492,158 @@ Overfull \hbox (55.63855pt too wide) in paragraph at lines 121--126
 [25]) (./teil_2/planen.tex
 Kapitel 10.
 
+Overfull \hbox (4.24113pt too wide) in alignment at lines 12--22
+ [] [] 
+ []
+
+
+Overfull \hbox (4.24113pt too wide) in alignment at lines 24--34
+ [] [] 
+ []
+
+
+Overfull \hbox (4.24113pt too wide) in alignment at lines 39--49
+ [] [] 
+ []
+
+
 
 [26
 
-]) (./teil_2/entscheiden.tex
+]
+Overfull \hbox (4.24113pt too wide) in alignment at lines 51--61
+ [] [] 
+ []
+
+
+Overfull \hbox (4.24113pt too wide) in alignment at lines 63--73
+ [] [] 
+ []
+
+
+Overfull \hbox (4.24113pt too wide) in alignment at lines 75--85
+ [] [] 
+ []
+
+
+Overfull \hbox (4.24113pt too wide) in alignment at lines 87--97
+ [] [] 
+ []
+
+[27]
+Overfull \hbox (4.24113pt too wide) in alignment at lines 99--109
+ [] [] 
+ []
+
+
+Overfull \hbox (4.24113pt too wide) in alignment at lines 114--124
+ [] [] 
+ []
+
+
+Overfull \hbox (4.24113pt too wide) in alignment at lines 129--139
+ [] [] 
+ []
+
+
+Overfull \hbox (4.24113pt too wide) in alignment at lines 141--151
+ [] [] 
+ []
+
+[28]
+Overfull \hbox (4.24113pt too wide) in alignment at lines 153--163
+ [] [] 
+ []
+
+
+Overfull \hbox (4.24113pt too wide) in alignment at lines 165--175
+ [] [] 
+ []
+
+
+Overfull \hbox (4.24113pt too wide) in alignment at lines 177--187
+ [] [] 
+ []
+
+
+Overfull \hbox (4.24113pt too wide) in alignment at lines 192--202
+ [] [] 
+ []
+
+[29]
+Overfull \hbox (4.24113pt too wide) in alignment at lines 204--214
+ [] [] 
+ []
+
+
+Overfull \hbox (4.24113pt too wide) in alignment at lines 216--226
+ [] [] 
+ []
+
+
+Overfull \hbox (4.24113pt too wide) in alignment at lines 231--241
+ [] [] 
+ []
+
+
+Overfull \hbox (4.24113pt too wide) in alignment at lines 243--253
+ [] [] 
+ []
+
+
+Overfull \hbox (4.24113pt too wide) in alignment at lines 258--268
+ [] [] 
+ []
+
+
+
+[30]
+Overfull \hbox (4.24113pt too wide) in alignment at lines 270--280
+ [] [] 
+ []
+
+
+Overfull \hbox (4.24113pt too wide) in alignment at lines 282--292
+ [] [] 
+ []
+
+
+Overfull \hbox (4.24113pt too wide) in alignment at lines 294--304
+ [] [] 
+ []
+
+
+Overfull \hbox (4.24113pt too wide) in alignment at lines 306--316
+ [] [] 
+ []
+
+
+
+[31]
+
+[32]) (./teil_2/entscheiden.tex
 Kapitel 11.
 
 
-[27
+[33
 
 ]) (./teil_2/realisieren.tex
 Kapitel 12.
 
 
-[28
+[34
 
 ]) (./teil_2/kontrollieren.tex
 Kapitel 13.
 
 
-[29
+[35
 
 ]) (./teil_2/auswerten.tex
 Kapitel 14.
 
 
-[30
+[36
 
 ]) (./global/glossar.tex (./main.gls)) (./global/abbildungsverzeichnis.tex
 (./main.lof)
@@ -1526,7 +1652,7 @@ Kapitel 14.
 
 ) (./global/quellenverzeichnis.tex
 
-[31
+[37
 
 
 ]
@@ -1536,7 +1662,7 @@ Package biblatex Warning: No driver for 'ook'.
 
 )
 
-[32
+[38
 
 ] 
 enddocument/afterlastpage: lastpage setting LastPage.
@@ -1546,16 +1672,16 @@ LaTeX2e <2024-06-01> patch level 2
 L3 programming layer <2024-07-20>
  ***********
 Package rerunfilecheck Info: File `main.out' has not changed.
-(rerunfilecheck)             Checksum: 9052466F0C09C2712B56614AAFF3E0C8;5753.
+(rerunfilecheck)             Checksum: 68F9A3C7252F702691ABF1B24BC0693D;6698.
 Package logreq Info: Writing requests to 'main.run.xml'.
 \openout1 = `main.run.xml'.
 
  ) 
 Here is how much of TeX's memory you used:
- 33248 strings out of 473579
- 599893 string characters out of 5732264
- 1949960 words of memory out of 5000000
- 55543 multiletter control sequences out of 15000+600000
+ 33341 strings out of 473579
+ 601089 string characters out of 5732264
+ 1950960 words of memory out of 5000000
+ 55598 multiletter control sequences out of 15000+600000
  576240 words of font info for 75 fonts, out of 8000000 for 9000
  1143 hyphenation exceptions out of 8191
  109i,12n,107p,2373b,2463s stack positions out of 10000i,1000n,20000p,200000b,200000s
@@ -1573,10 +1699,10 @@ fonts/type1/public/cm-super/sfrm1200.pfb><c:/texlive/2024/texmf-dist/fonts/type
 1/public/cm-super/sfrm1440.pfb><c:/texlive/2024/texmf-dist/fonts/type1/public/c
 m-super/sfti1095.pfb><c:/texlive/2024/texmf-dist/fonts/type1/public/cm-super/sf
 tt1095.pfb>
-Output written on main.pdf (33 pages, 611911 bytes).
+Output written on main.pdf (39 pages, 628278 bytes).
 PDF statistics:
- 546 PDF objects out of 1000 (max. 8388607)
- 466 compressed objects within 5 object streams
- 100 named destinations out of 1000 (max. 500000)
- 354 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 646 PDF objects out of 1000 (max. 8388607)
+ 559 compressed objects within 6 object streams
+ 138 named destinations out of 1000 (max. 500000)
+ 418 words of extra memory for PDF output out of 10000 (max. 10000000)
 
