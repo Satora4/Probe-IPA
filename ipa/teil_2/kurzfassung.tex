@@ -1,0 +1,13 @@
+\chapter{Kurzfassung}\label{ch:kurzfassung}
+
+\paragraph{Ausgangssituation} 
+\gls{CardX} ist eine Transaktions-Autorisierungs-Lösung, die bei einigen Banken im Einsatz ist. CardX kommuniziert mit diversen anderen bankspezifischen IT-Systemen, zum Beispiel dem Kernbankensystem oder Service-Büros über Message-Queues.
+Diese Queues werden asynchron durch CardX befüllt und dabei in den Datenbank-Tabellen MQ\_TABLE (eingehende Nachrichten) und MQ\_OUT (ausgehende Nachrichten) zwischengespeichert. Diese Tabellen können momentan nur direkt auf der Datenbank eingesehen werden.
+
+\paragraph{Umsetzung} 
+Im Frontend wird auf die Seite Business Daten navigiert. Nachdem die Seite erreicht wurde, wird im Hintergrund ein GET-Request an das Backend gesendet. Im Backend sorgt dieser Request dafür, dass die Message-Queues aus der Datenbank hervorgeholt werden mithilfe von Hibernate. Die Daten werden bereits durch die SQL-Query sortiert und gefiltert. Anschliessend werden die Daten ins Frontend geschickt und dort mit einer Tabelle angezeigt. Um zu garantieren, dass der Code fehlerfrei läuft, werden noch Tests im Backend geschrieben.
+
+\paragraph{Ergebnis}
+Die neue Seite Business Daten ist korrekt umgesetzt und beinhaltet keine Fehler. Bei jedem Push wird der Code getestet und auf Styling geschaut. 
+
+\newpage
