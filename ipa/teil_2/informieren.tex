@@ -24,12 +24,12 @@ Diese Daten werden dann durch ein Get-Request vom Backend geholt. Das Ziel ist, 
 
 \begin{figure}[H]
 	\begin{center}
-		\includegraphics[width=0.8\textwidth]{ressourcen/Ablaufdiagramm}
+		\includegraphics[width=0.8\textwidth]{ressourcen/Sequenzendiagramm}
 		\caption[Ablauf eines GET-Requests für das Erstellen der Tabelle]{Ablauf eines GET-Requests für das Erstellen der Tabelle}\label{fig:get-request-for-creation-of-table}
 	\end{center}
 \end{figure}
 
-Folgende Schritte werden im Ablaufdiagramm durchgeführt.
+Folgende Schritte werden im Sequenzendiagramm durchgeführt.
 \begin{enumerate}
 	\item Das Frontend sendet einen GET-Request für alle Message-Queues um sie anschliessend in der Tabelle darzustellen.
 	\item Das Backend empfängt diesen Request und führt eine SQL-Query aus um die entsprechenden Message-Queues zu erhalten. Die SQL-Query filtert bereits alle Spalten heraus die nicht genutzt werden.
@@ -76,7 +76,7 @@ Folgenden funktionale und nicht funktionale Anforderungen sind hier für die Min
 	MA13    & Die Seite wird in kurzer Zeit geladen, notwendiges Filtering wird auf der Datenbank oder dem Server gemacht.     \\ \hline
 \end{tabular}
 
-\subsection{Erweiterung: Pagination}
+\subsection{Erweiterung: Pagination}\label{ch:erweiterung-filter}
 Folgenden funktionale und nicht funktionale Anforderungen sind hier für die Erweiterung Pagination aufgelistet.\newline
 
 \noindent \textbf{Funktionale Anforderungen}\newline

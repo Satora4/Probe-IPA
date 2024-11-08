@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.26 (TeX Live 2024) (preloaded format=pdflatex 2024.8.9)  7 NOV 2024 17:25
+This is pdfTeX, Version 3.141592653-2.6-1.40.26 (TeX Live 2024) (preloaded format=pdflatex 2024.8.9)  8 NOV 2024 17:18
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1099,7 +1099,7 @@ Package biblatex Info: Reference section=0 on input line 97.
 Package biblatex Info: Reference segment=0 on input line 97.
 
 (./titel.tex
-<ressourcen/ergon_logo_gross.png, id=209, 556.2381pt x 118.7637pt>
+<ressourcen/ergon_logo_gross.png, id=277, 556.2381pt x 118.7637pt>
 File: ressourcen/ergon_logo_gross.png Graphic file (type png)
 <use ressourcen/ergon_logo_gross.png>
 Package pdftex.def Info: ressourcen/ergon_logo_gross.png  used on input line 5.
@@ -1153,7 +1153,7 @@ el und ei-ne Anmelde-Plattform
 
 
 [5]
-<ressourcen/show-and-edit-tasks.png, id=309, 2569.6pt x 574.145pt>
+<ressourcen/show-and-edit-tasks.png, id=395, 2569.6pt x 574.145pt>
 File: ressourcen/show-and-edit-tasks.png Graphic file (type png)
 <use ressourcen/show-and-edit-tasks.png>
 Package pdftex.def Info: ressourcen/show-and-edit-tasks.png  used on input line
@@ -1197,7 +1197,7 @@ Overfull \hbox (14.7876pt too wide) in paragraph at lines 7--8
 , wel-ches mit-hil-fe ei-ner Dockings-
  []
 
-<ressourcen/Arbeitsplatz-Joel-Vontobel.jpg, id=331, 1606.0pt x 903.375pt>
+<ressourcen/Arbeitsplatz-Joel-Vontobel.jpg, id=416, 1606.0pt x 903.375pt>
 File: ressourcen/Arbeitsplatz-Joel-Vontobel.jpg Graphic file (type jpg)
 <use ressourcen/Arbeitsplatz-Joel-Vontobel.jpg>
 Package pdftex.def Info: ressourcen/Arbeitsplatz-Joel-Vontobel.jpg  used on inp
@@ -1280,7 +1280,7 @@ Overfull \hbox (35.99997pt too wide) in alignment at lines 21--38
 
 [10]) (./teil_1/versionierung_und_sicherung_der_arbeitsergebnisse.tex
 Kapitel 5.
-<ressourcen/placeholder.png, id=366, 683.55376pt x 529.98pt>
+<ressourcen/placeholder.png, id=451, 683.55376pt x 529.98pt>
 File: ressourcen/placeholder.png Graphic file (type png)
 <use ressourcen/placeholder.png>
 Package pdftex.def Info: ressourcen/placeholder.png  used on input line 12.
@@ -1520,14 +1520,15 @@ Kapitel 9.
 [29
 
 ]
-<ressourcen/Ablaufdiagramm.png, id=472, 462.72874pt x 230.8625pt>
-File: ressourcen/Ablaufdiagramm.png Graphic file (type png)
-<use ressourcen/Ablaufdiagramm.png>
-Package pdftex.def Info: ressourcen/Ablaufdiagramm.png  used on input line 27.
+<ressourcen/Sequenzendiagramm.png, id=558, 462.72874pt x 230.8625pt>
+File: ressourcen/Sequenzendiagramm.png Graphic file (type png)
+<use ressourcen/Sequenzendiagramm.png>
+Package pdftex.def Info: ressourcen/Sequenzendiagramm.png  used on input line 2
+7.
 (pdftex.def)             Requested size: 316.12341pt x 157.72064pt.
 
 
-[30 <./ressourcen/Ablaufdiagramm.png>]
+[30 <./ressourcen/Sequenzendiagramm.png>]
 Underfull \hbox (badness 10000) in paragraph at lines 50--51
 
  []
@@ -1793,33 +1794,53 @@ Overfull \hbox (4.24113pt too wide) in alignment at lines 298--308
 
 
 [41])
+<ressourcen/Klassendiagramm-Backend.jpg, id=639, 688.5725pt x 259.97125pt>
+File: ressourcen/Klassendiagramm-Backend.jpg Graphic file (type jpg)
+<use ressourcen/Klassendiagramm-Backend.jpg>
+Package pdftex.def Info: ressourcen/Klassendiagramm-Backend.jpg  used on input 
+line 25.
+(pdftex.def)             Requested size: 316.12341pt x 119.3502pt.
+
 
 [42
 
 
-]) (./teil_2/entscheiden.tex
+]
+
+[43 <./ressourcen/Klassendiagramm-Backend.jpg>]
+
+[44]
+
+[45]
+Underfull \hbox (badness 10000) in paragraph at lines 91--92
+
+ []
+
+
+
+[46]) (./teil_2/entscheiden.tex
 Kapitel 11.
 
 
-[43
+[47
 
 ]) (./teil_2/realisieren.tex
 Kapitel 12.
 
 
-[44
+[48
 
 ]) (./teil_2/kontrollieren.tex
 Kapitel 13.
 
 
-[45
+[49
 
 ]) (./teil_2/auswerten.tex
 Kapitel 14.
 
 
-[46
+[50
 
 ]) (./global/glossar.tex (./main.gls)) (./global/abbildungsverzeichnis.tex
 (./main.lof)
@@ -1828,7 +1849,7 @@ Kapitel 14.
 
 ) (./global/quellenverzeichnis.tex
 
-[47
+[51
 
 
 ]
@@ -1838,7 +1859,7 @@ Package biblatex Warning: No driver for 'ook'.
 
 )
 
-[48
+[52
 
 ] 
 enddocument/afterlastpage: lastpage setting LastPage.
@@ -1848,16 +1869,16 @@ LaTeX2e <2024-06-01> patch level 2
 L3 programming layer <2024-07-20>
  ***********
 Package rerunfilecheck Info: File `main.out' has not changed.
-(rerunfilecheck)             Checksum: 28B150A01C37D3636D99493C4698E600;7181.
+(rerunfilecheck)             Checksum: 5E9F8EA17CEBD73EF271170826E98D26;10450.
 Package logreq Info: Writing requests to 'main.run.xml'.
 \openout1 = `main.run.xml'.
 
  ) 
 Here is how much of TeX's memory you used:
- 33408 strings out of 473579
- 602567 string characters out of 5732264
+ 33465 strings out of 473579
+ 603942 string characters out of 5732264
  1950960 words of memory out of 5000000
- 55637 multiletter control sequences out of 15000+600000
+ 55672 multiletter control sequences out of 15000+600000
  576240 words of font info for 75 fonts, out of 8000000 for 9000
  1143 hyphenation exceptions out of 8191
  109i,12n,107p,2373b,2463s stack positions out of 10000i,1000n,20000p,200000b,200000s
@@ -1875,10 +1896,10 @@ fonts/type1/public/cm-super/sfrm1200.pfb><c:/texlive/2024/texmf-dist/fonts/type
 1/public/cm-super/sfrm1440.pfb><c:/texlive/2024/texmf-dist/fonts/type1/public/c
 m-super/sfti1095.pfb><c:/texlive/2024/texmf-dist/fonts/type1/public/cm-super/sf
 tt1095.pfb>
-Output written on main.pdf (49 pages, 639770 bytes).
+Output written on main.pdf (53 pages, 691089 bytes).
 PDF statistics:
- 718 PDF objects out of 1000 (max. 8388607)
- 620 compressed objects within 7 object streams
- 159 named destinations out of 1000 (max. 500000)
- 434 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 832 PDF objects out of 1000 (max. 8388607)
+ 728 compressed objects within 8 object streams
+ 181 named destinations out of 1000 (max. 500000)
+ 575 words of extra memory for PDF output out of 10000 (max. 10000000)
 

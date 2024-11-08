@@ -8,10 +8,99 @@ Die Arbeitspakete sind nach der Projektmanagementmethode IPERKA gegliedert. Prob
 \include{teil_2/arbeitspakete}
 
 \section{Lösungskonzept für die Struktur vom Backend}
-In diesem Abschnitt wir das Lösungskonzept für einen Teil der unter \ref{ch:minimalanforderungen} definierten Anforderungen beschrieben.
+In diesem Abschnitt wir das Lösungskonzept vom Backend für einen Teil der unter \ref{ch:minimalanforderungen} definierten Anforderungen beschrieben.
 
 \subsection{Erstellung der Endpunkte}
-Im Backend existieren noch keine Endpunkte für die Message-Queues, um sie im Frontend darzustellen. Deshalb müssen diese neu implementiert werden. Die Endpoints werden in einer Service-Klasse erstellt, welche von einem Interface implementiert wird. Die Standardfunktionen, wie GET oder UPDATE, sind bereits im Interface definiert und müssen so nur noch in der Service-Klasse implementiert werden. Der Grund für das Interface ist, dass das Interface für die Service-Klasse und die Mock-Service-Klasse genutzte werden kann und beide Klassen die gleichen Funktionen haben aber mit einer unterschiedlichen Implementierung.
-Der Zugriff auf die Datenbank erfolgt in der Klasse ...
+Im Backend existieren noch keine Endpunkte für die Message-Queues, um sie im Frontend darzustellen. Deshalb müssen diese neu implementiert werden. Die Endpoints werden in einer Resource-Klasse erstellt und rufen Funktionen von einer Service-Klasse auf. Die Service-Klasse wird von einem Interface implementiert und die Standardfunktionen, wie «getAll» oder «update», sind so bereits im Interface definiert und müssen nur noch in der Service-Klasse implementiert werden. Der Grund für das Interface ist, dass es für die Service-Klasse und die Mock-Service-Klasse genutzt werden kann und beide Klassen die gleichen Funktionen haben, aber mit einer unterschiedlichen Implementierung.
+Der Zugriff auf die Datenbank erfolgt in einer DAO-Klasse. In dieser Klasse werden mithilfe von Funktionen die Daten von der Datenbank hervorgeholt und bereitgestellt. Diese Funktionen können anschliessend von der Service-Klasse aufgerufen und werden von einem DAO-Ojekt zu einem DTO-Objekt gemappt, um die Daten in ein passendes Objekt zu füllen, welches anschliessend wieder an das Frontend gesendet wird.
+
+\subsubsection{DAO-Klassen}
+Eine DAO-Klasse (Data Access Object) wird verwendet um die CRUD-Operationen (Create, Read, Update, Delete) bereitzustellen, die benötigt werden, um Daten zu verwalten. Sie abstrahiert die Verbindung zur Datenbank, sodass der Code ausserhalb der DAO-Klasse unabhängig von der Datenzugriffstechnologie, in diesem Fall Hibernate, bleibt.
+
+\subsubsection{Klassendiagramm für das Backend}
+Hier wird ein Klassendiagramm dargestellt, mit den verschiedenen Klassen und Beziehungen, um das Verständnis der Erstellung der Endpunkte zu vereinfachen. Diese Version muss nicht der Implementierung entsprechen. Es kann sein das während der Implementierung Veränderungen auftreten die nicht in diesem Diagramm dargestellt werden.
+
+\begin{figure}[H]
+	\begin{center}
+		\includegraphics[width=0.8\textwidth]{ressourcen/Klassendiagramm-Backend}
+		\caption[Klassendiagramm für das Backend]{Klassendiagramm für das Backend}\label{fig:klassendiagramm-backend}
+	\end{center}
+\end{figure}
+
+\noindent Der Klassenname ist immer oben in der Box in Bold geschrieben. Die Verbindungen zeigen an was passiert, wenn ein Endpoint aufgerufen wird. Bei den Interfaces und den dazugehörigen Implementationen, ist jeweils nur das Interface beschrieben. Die gestrichelten Verbindungen deuten darauf hin, dass sie diese Klasse implementieren oder sie gebrauch von einer Funktion in der entsprechenden Klasse machen.
+
+\subsection{Verwendete Technologien}
+Um dieses Konzept umzusetzen werden folgende Technologien verwendet:
+\paragraph{Java} ist eine bekannte Programmiersprache und wird in diesem Projekt genutzt, um das Backend zu implementieren.
+\paragraph{Hibernate} ist ein Framework für objekt-relationale Abbildung (ORM) ind java, welcher ermöglicht , Java-Objekte direkt mit relationalen Datenbanken zu verknüpfen.
+\paragraph{Springboot} ist ein Java-Framework, das auf dem Spring-Framework basiert. Es wurde entwickelt, um die Konfiguration und den Aufbau von Anwendungen zu beschleunigen, indem es automatisierte Konfigurationen und eingebettete Server bietet.
+
+\section{Lösungskonzept für die Struktur vom Frontend}
+In diesem Abschnitt wir das Lösungskonzept vom Frontende für einen Teil der unter \ref{ch:minimalanforderungen} definierten Anforderungen beschrieben.
+
+\subsection{Bestehende Implementationen}
+Im Frontend besteht bereits vieles. Ein Menü muss nicht mehr erstellt werden. Die Seite kann von anderen Implementationen kopiert werden und passend zu den Minimalanforderungen gemacht werden. Die Darstellung einer Tabelle im Frontend existiert bereits und muss dadurch nicht erneut implementiert werden. Die Tabelle muss jedoch noch angepasst werden, um die richtigen Spalten anzuzeigen. Durch die bereits existierende Darstellung wird die Tabelle stimmig in das UI eingebaut und wird in etwa gleich aussehen wie die anderen Tabellen im Web-GUI.
+
+\subsection{Neue Implementationen}
+Für das Anzeigen der gesamten Nachricht in der Spalte MESSAGE\_SHORT / \_LONG wird ein Knopf im Kontextmenü verwendet. Wenn die gesamte Nachricht angezeigt wird, wird dieser Knopf durch einen anderen ersetzt, welcher die Nachricht wieder auf 50 Zeichen begrenzt.
+
+Ausserdem beinhaltet das Kontextmenü einen weiteren Knopf um bei einem Eintrag einen neuen Verarbeitungsversuch auszulösen. Dieser Knopf wird bei Einträgen, die bereits an einem Verarbeitungsversuch sind, deaktiviert oder ausgeblendet. Dieser Knopf löst einen Request in das Backend aus, um der neue Verarbeitungssversuch in der Datenbank zu speichern und ihn auszulösen.
+
+\subsection{Verwendete Technologien}
+Um dieses Konzept umzusetzen werden folgende Technologien verwendet:
+
+\paragraph{TypeScript} ist eine Programmiersprache die verwendet wird um die Funktionalitäten für die Tabelle zu implementieren, wie zum Beispiel werden die Requests, an das Backend, mit TypeScript geschrieben.
+\paragraph{Angular} ist ein Framework für Single Page Applications (SPAs), bei denen Inhalte dynamisch nachgeladen werden können, ohne dass die Seite neu geladen werden muss. Ausserdem eignet es sich gut um moderne, skalierbare und performante Webanwendungen zu erstellen.
+\paragraph{HTML} (HyperText Markup Language) wird verwendet um die Struktur und den Inhalt vom Webdokument zu beschreiben. HTML verwendet sogenannte «Tags» die es ermöglichen Text, Bilder und unter anderem auch Tabellen auf der Webseite anzuzeigen.
+\paragraph{CSS} (Cascading Style Sheets) ist eine Stylesheet-Sprache, die da Design und Layout von HTML-Dukumenten festlegt.
+
+\section{Entscheidung der Erweiterung}
+Dieser Absatz erklärt den Grund warum sich der Lernende für eine Erweiterung entschieden hat.
+
+\subsection{Pagination}
+Pagination ist etwas Neues für den Lernenden. Er hat es schon öfters gesehen auf anderen Webseiten, hat sich aber noch nie mit der Implementierung auseinandergesetzt. Das Wechseln zwischen mehreren Blättern ermöglicht einen klaren Überblick über die Seite, da die Tabelle durch die Aufteilung eine begrenzte Anzahl Elemente enthält und die Seite durch das nicht überfüllt wirkt. Die Implementierung existiert bereits bei anderen Tabellen und wäre daher nicht allzu schwer, um sie in die Seite einzubauen.
+
+\subsection{Filter}
+Die Implementation für den Filter ist einfacher zu verstehen weil, es Filter auf fast jeder Webseite gibt. ob versteckt oder sichtbar, kann man sich gut vorstellen wie das im Hintergrund ablaufen kann. Es gibt mehr Anforderungen für die Erweiterung Filter, aber sie sind einfacher als die bei dem Paginator. Es gibt nur drei Filter-Kriterien und bei mehreren aktiven Filter werden sie mit einem «UND» verknüpft.
+
+\subsection{Entscheid}
+Die Anforderungen von Pagination sind zwar weniger, aber da sich der Lernende noch nie mit Pagination auseinandergesetzt hat erschwert es ihm die Implementation und es könnten Fehler auftreten die viel Zeit kosten. Da die Probe-IPA aber nur 10 Tage zu Verfügung stellt und die Erweiterung Filter schneller gehen könnte, kann der Lernende anschliessend mehr Zeit in die Dokumentation von der Erweiterung investieren, um am Ende ein fertiges Produkt zu präsentieren.
+\paragraph{Ausgewählte Erweiterung:} Filter
+
+\section{Lösungskonzept für die Struktur vom Filter}
+In diesem Abschnitt wir das Lösungskonzept von der Erweiterung Filter der unter \ref{ch:erweiterung-filter} definierten Anforderungen beschrieben.
+
+\subsection{Bestehende Implementation}
+Im Web-GUI existiert bereits ein Filter unter «Business Daten» → «Fehlgeschlagene Zahlungen». Dieser Filter beinhaltet, wie auch bei der Erweiterung gefordert, einen «Datum von / Datum bis» Filter, welcher kopiert und angepasst werden kann. Für den neuen Endpoint kann auch der bestehende als Beispiel verwendet werden, um die Implementierung zu erleichtern.
+
+Die Filterkriterien und -werte werden auch bereits bei dem Filter auf der Seite «Fehlgeschlagene Zahlungen» in der URL abgebildet. Dadurch kann für die funktionale Anforderung EF6 dies als Beispiel genutzt werden oder sogar teilweise kopiert werden.
+
+\subsection{Neue Implementationen}
+Für die zwei anderen Filterkriterien (filtern nach MQ\_IN\_STATUS und Filtern mittels Begriffen im Nachrichteninhalt) gibt es noch keine Implementierung in diesem Projekt, weshalb sie selbst erstellt werden müssen.
+
+\subsubsection{MQ\_IN\_STATUS}
+Für diesen Filter wird eine Auswahlliste erstellt mit der folgenden Auswahl:
+
+\paragraph{NEW} Eine neue Nachricht, die bereit für die Bearbeitung ist, für den entsprechenden Job.
+\paragraph{STOPPED} Das Bearbeiten der Nachricht wurde gestoppt und wird später weiter bearbeitet.
+\paragraph{WAIT} Die Nachricht wurde auf warten gestellt und wird später bearbeitet.
+\paragraph{ERROR} Die Nachricht kann nicht wegen eines Fehlers bearbeitet werden und muss manuell bearbeitet werden.
+\paragraph{CANCELLED} Der Status kann manuell gesetzt werden zu dem Status STOPPED, um sie vom Löschjob löschen zu lassen.
+\paragraph{NOTICED} Der Status kann manuell gesetzt werden zu dem Status ERROR, um sie vom Löschjob löschen zu lassen.
+\paragraph{PROCESSED} Die Nachricht wurde erfolgreich bearbeitet.
+\paragraph{OUTDATED} Die Nachricht war veraltet, was bedeutet, dass der Job bereits eine neuere Nachricht bearbeitet hat. (z. B. eine Nachricht mit einer höheren Sequenz-Nummer)\newline
+
+\noindent Der ausgewählte Status wird ins Backend geschickt. Die Funktion von diesem Endpoint, welcher den Request bekommt, besteht daraus einen Anfrage an die Datenbank zu machen. Die Filterung, wie in den Anforderungen \ref{ch:erweiterung-filter} beschrieben, passiert darauf hin direkt auf der Datenbank um die Performance so wenig wie möglich zu beeinflussen. Würde die Filterung im Backend geschehen, würde das die Performance ein wenig beeinflussen, weshalb es gleich auf der Datenbank gemacht wird. Dies gilt auch für die beiden anderen Filter.
+
+\subsection{Begriffe im Nachrichten Inhalt Filtern}
+Dieser Filter wird mithilfe von einem Textfeld erstellt. In dieses Textfeld können Begriffe hineingeschrieben werden und durch einen Knopf gefiltert werden. Hier wird auch wieder ein Request an das Backend gesendet, um den Nachrichteninhalt von den Elementen in der Datenbank-Tabelle MQ\_TABLE nach diesen Begriffen zu filtern und anschliessend das Ergebnis wieder zurück zu senden an das Frontend. 
+
+\subsection{Ablaufdiagramm für die Erweiterung Filter}
+%\begin{figure}[H]
+%	\begin{center}
+%		\includegraphics[width=0.8\textwidth]{ressourcen/Ablaufdiagramm}
+%		\caption[Ablauf eines Filter-Request]{Ablauf eines Filter-Request}\label{fig:ablaufdiagramm-erweiterung-filter}
+%	\end{center}
+%\end{figure}
 
 \newpage

@@ -174,6 +174,7 @@
 \@writefile{toc}{\contentsline {subsection}{\numberline {9.2.1}Minimalanforderungen}{31}{subsection.9.2.1}\protected@file@percent }
 \newlabel{ch:minimalanforderungen}{{9.2.1}{31}{Minimalanforderungen}{subsection.9.2.1}{}}
 \@writefile{toc}{\contentsline {subsection}{\numberline {9.2.2}Erweiterung: Pagination}{32}{subsection.9.2.2}\protected@file@percent }
+\newlabel{ch:erweiterung-filter}{{9.2.2}{32}{Erweiterung: Pagination}{subsection.9.2.2}{}}
 \@writefile{toc}{\contentsline {subsection}{\numberline {9.2.3}Erweiterung: Filter}{33}{subsection.9.2.3}\protected@file@percent }
 \@writefile{toc}{\contentsline {chapter}{\numberline {10}Planen}{35}{chapter.10}\protected@file@percent }
 \@writefile{lof}{\addvspace {10\p@ }}
@@ -183,33 +184,68 @@
 \@input{teil_2/arbeitspakete.aux}
 \@writefile{toc}{\contentsline {section}{\numberline {10.2}Lösungskonzept für die Struktur vom Backend}{42}{section.10.2}\protected@file@percent }
 \@writefile{toc}{\contentsline {subsection}{\numberline {10.2.1}Erstellung der Endpunkte}{42}{subsection.10.2.1}\protected@file@percent }
-\@writefile{toc}{\contentsline {chapter}{\numberline {11}Entscheiden}{43}{chapter.11}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsubsection}{\numberline {10.2.1.1}DAO-Klassen}{42}{subsubsection.10.2.1.1}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsubsection}{\numberline {10.2.1.2}Klassendiagramm für das Backend}{42}{subsubsection.10.2.1.2}\protected@file@percent }
+\@writefile{lof}{\contentsline {figure}{\numberline {10.1}{\ignorespaces Klassendiagramm für das Backend}}{43}{figure.caption.7}\protected@file@percent }
+\newlabel{fig:klassendiagramm-backend}{{10.1}{43}{Klassendiagramm für das Backend}{figure.caption.7}{}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {10.2.2}Verwendete Technologien}{43}{subsection.10.2.2}\protected@file@percent }
+\@writefile{toc}{\contentsline {paragraph}{Java}{43}{subsection.10.2.2}\protected@file@percent }
+\@writefile{toc}{\contentsline {paragraph}{Hibernate}{43}{subsection.10.2.2}\protected@file@percent }
+\@writefile{toc}{\contentsline {paragraph}{Springboot}{43}{subsection.10.2.2}\protected@file@percent }
+\@writefile{toc}{\contentsline {section}{\numberline {10.3}Lösungskonzept für die Struktur vom Frontend}{43}{section.10.3}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {10.3.1}Bestehende Implementationen}{43}{subsection.10.3.1}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {10.3.2}Neue Implementationen}{44}{subsection.10.3.2}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {10.3.3}Verwendete Technologien}{44}{subsection.10.3.3}\protected@file@percent }
+\@writefile{toc}{\contentsline {paragraph}{TypeScript}{44}{subsection.10.3.3}\protected@file@percent }
+\@writefile{toc}{\contentsline {paragraph}{Angular}{44}{subsection.10.3.3}\protected@file@percent }
+\@writefile{toc}{\contentsline {paragraph}{HTML}{44}{subsection.10.3.3}\protected@file@percent }
+\@writefile{toc}{\contentsline {paragraph}{CSS}{44}{subsection.10.3.3}\protected@file@percent }
+\@writefile{toc}{\contentsline {section}{\numberline {10.4}Entscheidung der Erweiterung}{44}{section.10.4}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {10.4.1}Pagination}{44}{subsection.10.4.1}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {10.4.2}Filter}{45}{subsection.10.4.2}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {10.4.3}Entscheid}{45}{subsection.10.4.3}\protected@file@percent }
+\@writefile{toc}{\contentsline {paragraph}{Ausgewählte Erweiterung:}{45}{subsection.10.4.3}\protected@file@percent }
+\@writefile{toc}{\contentsline {section}{\numberline {10.5}Lösungskonzept für die Struktur vom Filter}{45}{section.10.5}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {10.5.1}Bestehende Implementation}{45}{subsection.10.5.1}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {10.5.2}Neue Implementationen}{45}{subsection.10.5.2}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsubsection}{\numberline {10.5.2.1}MQ\_IN\_STATUS}{45}{subsubsection.10.5.2.1}\protected@file@percent }
+\@writefile{toc}{\contentsline {paragraph}{NEW}{46}{subsubsection.10.5.2.1}\protected@file@percent }
+\@writefile{toc}{\contentsline {paragraph}{STOPPED}{46}{subsubsection.10.5.2.1}\protected@file@percent }
+\@writefile{toc}{\contentsline {paragraph}{WAIT}{46}{subsubsection.10.5.2.1}\protected@file@percent }
+\@writefile{toc}{\contentsline {paragraph}{ERROR}{46}{subsubsection.10.5.2.1}\protected@file@percent }
+\@writefile{toc}{\contentsline {paragraph}{CANCELLED}{46}{subsubsection.10.5.2.1}\protected@file@percent }
+\@writefile{toc}{\contentsline {paragraph}{NOTICED}{46}{subsubsection.10.5.2.1}\protected@file@percent }
+\@writefile{toc}{\contentsline {paragraph}{PROCESSED}{46}{subsubsection.10.5.2.1}\protected@file@percent }
+\@writefile{toc}{\contentsline {paragraph}{OUTDATED}{46}{subsubsection.10.5.2.1}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {10.5.3}Begriffe im Nachrichten Inhalt Filtern}{46}{subsection.10.5.3}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {10.5.4}Ablaufdiagramm für die Erweiterung Filter}{46}{subsection.10.5.4}\protected@file@percent }
+\@writefile{toc}{\contentsline {chapter}{\numberline {11}Entscheiden}{47}{chapter.11}\protected@file@percent }
 \@writefile{lof}{\addvspace {10\p@ }}
 \@writefile{lot}{\addvspace {10\p@ }}
-\newlabel{ch:entscheiden}{{11}{43}{Entscheiden}{chapter.11}{}}
-\@writefile{toc}{\contentsline {chapter}{\numberline {12}Realisieren}{44}{chapter.12}\protected@file@percent }
+\newlabel{ch:entscheiden}{{11}{47}{Entscheiden}{chapter.11}{}}
+\@writefile{toc}{\contentsline {chapter}{\numberline {12}Realisieren}{48}{chapter.12}\protected@file@percent }
 \@writefile{lof}{\addvspace {10\p@ }}
 \@writefile{lot}{\addvspace {10\p@ }}
-\newlabel{ch:realisieren}{{12}{44}{Realisieren}{chapter.12}{}}
-\@writefile{toc}{\contentsline {chapter}{\numberline {13}Kontrollieren}{45}{chapter.13}\protected@file@percent }
+\newlabel{ch:realisieren}{{12}{48}{Realisieren}{chapter.12}{}}
+\@writefile{toc}{\contentsline {chapter}{\numberline {13}Kontrollieren}{49}{chapter.13}\protected@file@percent }
 \@writefile{lof}{\addvspace {10\p@ }}
 \@writefile{lot}{\addvspace {10\p@ }}
-\newlabel{ch:kontrollieren}{{13}{45}{Kontrollieren}{chapter.13}{}}
-\@writefile{toc}{\contentsline {chapter}{\numberline {14}Auswerten}{46}{chapter.14}\protected@file@percent }
+\newlabel{ch:kontrollieren}{{13}{49}{Kontrollieren}{chapter.13}{}}
+\@writefile{toc}{\contentsline {chapter}{\numberline {14}Auswerten}{50}{chapter.14}\protected@file@percent }
 \@writefile{lof}{\addvspace {10\p@ }}
 \@writefile{lot}{\addvspace {10\p@ }}
-\newlabel{ch:auswerten}{{14}{46}{Auswerten}{chapter.14}{}}
+\newlabel{ch:auswerten}{{14}{50}{Auswerten}{chapter.14}{}}
 \abx@aux@cite{0}{ergonlogo}
 \abx@aux@segm{0}{0}{ergonlogo}
-\@writefile{toc}{\contentsline {chapter}{Glossar}{47}{section*.7}\protected@file@percent }
-\@writefile{toc}{\contentsline {chapter}{Abbildungsverzeichnis}{47}{section*.9}\protected@file@percent }
-\@writefile{toc}{\contentsline {chapter}{Quellenverzeichnis}{48}{chapter*.10}\protected@file@percent }
-\abx@aux@page{3}{48}
-\abx@aux@page{4}{48}
-\newlabel{LastPage}{{14}{48}{Auswerten}{page.48}{}}
-\gdef\lastpage@lastpage{48}
-\gdef\lastpage@lastpageHy{48}
+\@writefile{toc}{\contentsline {chapter}{Glossar}{51}{section*.8}\protected@file@percent }
+\@writefile{toc}{\contentsline {chapter}{Abbildungsverzeichnis}{51}{section*.10}\protected@file@percent }
+\@writefile{toc}{\contentsline {chapter}{Quellenverzeichnis}{52}{chapter*.11}\protected@file@percent }
+\abx@aux@page{3}{52}
+\abx@aux@page{4}{52}
+\newlabel{LastPage}{{14}{52}{Auswerten}{page.52}{}}
+\gdef\lastpage@lastpage{52}
+\gdef\lastpage@lastpageHy{52}
 \abx@aux@read@bbl@mdfivesum{4A2A094AB534F6A82D8BFA033A10016C}
 \abx@aux@defaultrefcontext{0}{ict}{nyt/global//global/global/global}
 \abx@aux@defaultrefcontext{0}{ergonlogo}{nyt/global//global/global/global}
-\gdef \@abspage@last{49}
+\gdef \@abspage@last{53}
