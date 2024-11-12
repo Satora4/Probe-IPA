@@ -29,7 +29,7 @@ Diese Daten werden dann durch ein Get-Request vom Backend geholt. Das Ziel ist, 
 	\end{center}
 \end{figure}
 
-Folgende Schritte werden im Sequenzendiagramm durchgeführt.
+Folgende Schritte werden im Sequenzdiagramm durchgeführt.
 \begin{enumerate}
 	\item Das Frontend sendet einen GET-Request für alle Message-Queues um sie anschliessend in der Tabelle darzustellen.
 	\item Das Backend empfängt diesen Request und führt eine SQL-Query aus um die entsprechenden Message-Queues zu erhalten. Die SQL-Query filtert bereits alle Spalten heraus die nicht genutzt werden.

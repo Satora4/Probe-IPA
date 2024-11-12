@@ -1,0 +1,81 @@
+\subsection{Testfälle der Mindestanforderungen}
+
+\begin{longtable}{p{.3\textwidth}|p{.65\textwidth}}
+	\hline
+	\textbf{Testfall}               & \textbf{M1} \\
+	\hline
+	\textbf{Beschreibung}   		& Mapping von DAO zu DTO \\
+	\hline
+	\textbf{Art}    				& Unit-Test \\
+	\hline
+	\textbf{Vorbedingungen}    		& Das Backend läuft. \\
+	\hline
+	\textbf{Konfiguration}   	 	& 
+	\begin{itemize}
+		\item Ein DAO-Objekt ist erstellt und gefüllt mit Daten.
+		\item Ein DTO-Objekt ist erstellt und gefüllt mit den gemappten Daten.
+	\end{itemize} \\
+	\hline
+	\textbf{Ablauf}    				& 
+	\begin{enumerate}
+		\item Die Funktion mapDaoToDto() ausführen mit dem DAO Objekt als Parameter.
+		\item Der erhaltene Wert mit dem DTO-Objekt vergleichten.
+	\end{enumerate} \\
+	\hline
+	\textbf{Erwartetes Ergebnis}    & Es gibt keine Unterschiede zwischen dem generierten DTO- und dem bereits existierendem DTO-Objekt. \\
+	\hline
+\end{longtable}\label{tab:testfall-M1}
+
+\begin{longtable}{p{.3\textwidth}|p{.65\textwidth}}
+	\hline
+	\textbf{Testfall}               & \textbf{M2} \\
+	\hline
+	\textbf{Beschreibung}   		& Datenbank-Abfrage für die Erstellung von der Tabelle \\
+	\hline
+	\textbf{Art}    				& Integration-Test \\
+	\hline
+	\textbf{Vorbedingungen}    		& Das Backend läuft und eine passende Datenbank existiert. \\
+	\hline
+	\textbf{Konfiguration}   	 	& 
+	\begin{itemize}
+		\item Die Daten für den Aufruf werden erstellt.
+		\item Die erwarteten Daten werden erstellt.
+	\end{itemize} \\
+	\hline
+	\textbf{Ablauf}    				& 
+	\begin{enumerate}
+		\item Die Datenbank-Abfrage wird durchgeführt.
+		\item Die erhaltenen Daten werden überprüft mit den bereits erstellten Daten.
+	\end{enumerate} \\
+	\hline
+	\textbf{Erwartetes Ergebnis}    & Es gibt keine Unterschiede zwischen den Daten aus der Datenbank und den erwarteten Daten.  \\
+	\hline
+\end{longtable}\label{tab:testfall-M2}
+
+\begin{longtable}{p{.3\textwidth}|p{.65\textwidth}}
+	\hline
+	\textbf{Testfall}               & \textbf{M} \\
+	\hline
+	\textbf{Beschreibung}   		&  \\
+	\hline
+	\textbf{Art}    				&  \\
+	\hline
+	\textbf{Vorbedingungen}    		& Das Backend läuft. \\
+	\hline
+	\textbf{Konfiguration}   	 	& 
+	\begin{itemize}
+		\item 
+		\item 
+	\end{itemize} \\
+	\hline
+	\textbf{Ablauf}    				& 
+	\begin{enumerate}
+		\item 
+		\item 
+	\end{enumerate} \\
+	\hline
+	\textbf{Erwartetes Ergebnis}    &  \\
+	\hline
+\end{longtable}\label{tab:testfall-M}
+
+\newpage

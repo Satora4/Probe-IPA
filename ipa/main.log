@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.26 (TeX Live 2024) (preloaded format=pdflatex 2024.8.9)  8 NOV 2024 17:18
+This is pdfTeX, Version 3.141592653-2.6-1.40.26 (TeX Live 2024) (preloaded format=pdflatex 2024.8.9)  12 NOV 2024 11:40
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -965,7 +965,7 @@ Package biblatex Warning: 'babel/polyglossia' detected but 'csquotes' missing.
 
 \@quotelevel=\count476
 \@quotereset=\count477
-(./main.aux (./teil_2/arbeitspakete.aux))
+(./main.aux (./teil_2/arbeitspakete.aux) (./teil_2/testkonzepte.aux))
 \openout1 = `main.aux'.
 
 LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 97.
@@ -1099,7 +1099,7 @@ Package biblatex Info: Reference section=0 on input line 97.
 Package biblatex Info: Reference segment=0 on input line 97.
 
 (./titel.tex
-<ressourcen/ergon_logo_gross.png, id=277, 556.2381pt x 118.7637pt>
+<ressourcen/ergon_logo_gross.png, id=297, 556.2381pt x 118.7637pt>
 File: ressourcen/ergon_logo_gross.png Graphic file (type png)
 <use ressourcen/ergon_logo_gross.png>
 Package pdftex.def Info: ressourcen/ergon_logo_gross.png  used on input line 5.
@@ -1126,23 +1126,24 @@ pdfTeX warning (ext4): destination with the same identifier (name{page.1}) has
 been already used, duplicate ignored
 <to be read again> 
                    \relax 
-l.50 ...inimalanforderungen}{31}{subsection.9.2.1}
-                                                  % [1])
+l.50 ...inimalanforderungen}{32}{subsection.9.2.1}
+                                                  % [1]
+
+[2])
 \tf@toc=\write7
 \openout7 = `main.toc'.
 
-)
-(./teil_1/umfeld_und_ablauf.tex
+) (./teil_1/umfeld_und_ablauf.tex
 
-[2]
+[3]
 
-[3
+[4
 
 ]) (./teil_1/aufgabenstellung.tex
 Kapitel 1.
 
 
-[4
+[5
 
 ]
 Overfull \hbox (7.67137pt too wide) in paragraph at lines 48--49
@@ -1152,8 +1153,8 @@ el und ei-ne Anmelde-Plattform
 
 
 
-[5]
-<ressourcen/show-and-edit-tasks.png, id=395, 2569.6pt x 574.145pt>
+[6]
+<ressourcen/show-and-edit-tasks.png, id=425, 2569.6pt x 574.145pt>
 File: ressourcen/show-and-edit-tasks.png Graphic file (type png)
 <use ressourcen/show-and-edit-tasks.png>
 Package pdftex.def Info: ressourcen/show-and-edit-tasks.png  used on input line
@@ -1161,7 +1162,7 @@ Package pdftex.def Info: ressourcen/show-and-edit-tasks.png  used on input line
 (pdftex.def)             Requested size: 395.15277pt x 88.2907pt.
 ) (./teil_1/projektaufbauorganisation.tex
 
-[6 <./ressourcen/show-and-edit-tasks.png>]
+[7 <./ressourcen/show-and-edit-tasks.png>]
 Kapitel 2.
 
 Underfull \hbox (badness 10000) in paragraph at lines 13--13
@@ -1175,13 +1176,13 @@ Overfull \hbox (35.99997pt too wide) in alignment at lines 5--21
 
 ) (./teil_1/benuetzte_firmenstandards.tex
 
-[7
+[8
 
 ]
 Kapitel 3.
 ) (./teil_1/arbeitsumgebung.tex
 
-[8
+[9
 
 ]
 Kapitel 4.
@@ -1197,7 +1198,7 @@ Overfull \hbox (14.7876pt too wide) in paragraph at lines 7--8
 , wel-ches mit-hil-fe ei-ner Dockings-
  []
 
-<ressourcen/Arbeitsplatz-Joel-Vontobel.jpg, id=416, 1606.0pt x 903.375pt>
+<ressourcen/Arbeitsplatz-Joel-Vontobel.jpg, id=445, 1606.0pt x 903.375pt>
 File: ressourcen/Arbeitsplatz-Joel-Vontobel.jpg Graphic file (type jpg)
 <use ressourcen/Arbeitsplatz-Joel-Vontobel.jpg>
 Package pdftex.def Info: ressourcen/Arbeitsplatz-Joel-Vontobel.jpg  used on inp
@@ -1205,7 +1206,7 @@ ut line 11.
 (pdftex.def)             Requested size: 316.12341pt x 177.81844pt.
 
 
-[9
+[10
 
  <./ressourcen/Arbeitsplatz-Joel-Vontobel.jpg>]
 Underfull \hbox (badness 2903) in paragraph at lines 24--24
@@ -1278,16 +1279,16 @@ Overfull \hbox (35.99997pt too wide) in alignment at lines 21--38
 
 
 
-[10]) (./teil_1/versionierung_und_sicherung_der_arbeitsergebnisse.tex
+[11]) (./teil_1/versionierung_und_sicherung_der_arbeitsergebnisse.tex
 Kapitel 5.
-<ressourcen/placeholder.png, id=451, 683.55376pt x 529.98pt>
+<ressourcen/placeholder.png, id=481, 683.55376pt x 529.98pt>
 File: ressourcen/placeholder.png Graphic file (type png)
 <use ressourcen/placeholder.png>
 Package pdftex.def Info: ressourcen/placeholder.png  used on input line 12.
 (pdftex.def)             Requested size: 316.12341pt x 245.1038pt.
 
 
-[11
+[12
 
 ]
 File: ressourcen/placeholder.png Graphic file (type png)
@@ -1296,9 +1297,9 @@ Package pdftex.def Info: ressourcen/placeholder.png  used on input line 22.
 (pdftex.def)             Requested size: 316.12341pt x 245.1038pt.
 ) (./teil_1/projektmanagementmethode.tex
 
-[12 <./ressourcen/placeholder.png>]
+[13 <./ressourcen/placeholder.png>]
 
-[13]
+[14]
 Kapitel 6.
 
 Overfull \hbox (40.8805pt too wide) in paragraph at lines 2--3
@@ -1308,11 +1309,11 @@ de für die-se Projektmanagement-
 
 
 
-[14
+[15
 
 ]) (./teil_1/arbeitsprotokoll.tex
 
-[15]
+[16]
 Kapitel 7.
 
 Underfull \hbox (badness 10000) in paragraph at lines 14--14
@@ -1331,7 +1332,7 @@ Overfull \hbox (23.99998pt too wide) in alignment at lines 4--24
 
 
 
-[16
+[17
 
 ]
 Underfull \hbox (badness 10000) in paragraph at lines 37--37
@@ -1350,7 +1351,7 @@ Overfull \hbox (23.99998pt too wide) in alignment at lines 27--47
 
 
 
-[17]
+[18]
 Underfull \hbox (badness 10000) in paragraph at lines 60--60
 []|\T1/cmr/bx/n/10.95 Vergleich mit
  []
@@ -1367,7 +1368,7 @@ Overfull \hbox (23.99998pt too wide) in alignment at lines 50--70
 
 
 
-[18]
+[19]
 Underfull \hbox (badness 10000) in paragraph at lines 83--83
 []|\T1/cmr/bx/n/10.95 Vergleich mit
  []
@@ -1384,7 +1385,7 @@ Overfull \hbox (23.99998pt too wide) in alignment at lines 73--93
 
 
 
-[19]
+[20]
 Underfull \hbox (badness 10000) in paragraph at lines 106--106
 []|\T1/cmr/bx/n/10.95 Vergleich mit
  []
@@ -1401,7 +1402,7 @@ Overfull \hbox (23.99998pt too wide) in alignment at lines 96--116
 
 
 
-[20]
+[21]
 Underfull \hbox (badness 10000) in paragraph at lines 129--129
 []|\T1/cmr/bx/n/10.95 Vergleich mit
  []
@@ -1418,7 +1419,7 @@ Overfull \hbox (23.99998pt too wide) in alignment at lines 119--139
 
 
 
-[21]
+[22]
 Underfull \hbox (badness 10000) in paragraph at lines 152--152
 []|\T1/cmr/bx/n/10.95 Vergleich mit
  []
@@ -1435,7 +1436,7 @@ Overfull \hbox (23.99998pt too wide) in alignment at lines 142--162
 
 
 
-[22]
+[23]
 Underfull \hbox (badness 10000) in paragraph at lines 175--175
 []|\T1/cmr/bx/n/10.95 Vergleich mit
  []
@@ -1452,7 +1453,7 @@ Overfull \hbox (23.99998pt too wide) in alignment at lines 165--185
 
 
 
-[23]
+[24]
 Underfull \hbox (badness 10000) in paragraph at lines 198--198
 []|\T1/cmr/bx/n/10.95 Vergleich mit
  []
@@ -1469,7 +1470,7 @@ Overfull \hbox (23.99998pt too wide) in alignment at lines 188--208
 
 
 
-[24]
+[25]
 Underfull \hbox (badness 10000) in paragraph at lines 221--221
 []|\T1/cmr/bx/n/10.95 Vergleich mit
  []
@@ -1486,7 +1487,7 @@ Overfull \hbox (23.99998pt too wide) in alignment at lines 211--231
 
 
 
-[25]
+[26]
 Underfull \hbox (badness 10000) in paragraph at lines 244--244
 []|\T1/cmr/bx/n/10.95 Vergleich mit
  []
@@ -1503,24 +1504,24 @@ Overfull \hbox (23.99998pt too wide) in alignment at lines 234--254
 
 
 
-[26]) (./teil_2/projekt.tex
+[27]) (./teil_2/projekt.tex
 
-[27
+[28
 
 ]) (./teil_2/kurzfassung.tex
 Kapitel 8.
 
 
-[28
+[29
 
 ]) (./teil_2/informieren.tex
 Kapitel 9.
 
 
-[29
+[30
 
 ]
-<ressourcen/Sequenzendiagramm.png, id=558, 462.72874pt x 230.8625pt>
+<ressourcen/Sequenzendiagramm.png, id=588, 462.72874pt x 230.8625pt>
 File: ressourcen/Sequenzendiagramm.png Graphic file (type png)
 <use ressourcen/Sequenzendiagramm.png>
 Package pdftex.def Info: ressourcen/Sequenzendiagramm.png  used on input line 2
@@ -1528,7 +1529,7 @@ Package pdftex.def Info: ressourcen/Sequenzendiagramm.png  used on input line 2
 (pdftex.def)             Requested size: 316.12341pt x 157.72064pt.
 
 
-[30 <./ressourcen/Sequenzendiagramm.png>]
+[31 <./ressourcen/Sequenzendiagramm.png>]
 Underfull \hbox (badness 10000) in paragraph at lines 50--51
 
  []
@@ -1576,7 +1577,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 54--69
 
 
 
-[31]
+[32]
 Underfull \hbox (badness 10000) in paragraph at lines 70--71
 
  []
@@ -1614,7 +1615,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 84--91
 
 
 
-[32{c:/texlive/2024/texmf-dist/fonts/enc/dvips/cm-super/cm-super-ts1.enc}]
+[33{c:/texlive/2024/texmf-dist/fonts/enc/dvips/cm-super/cm-super-ts1.enc}]
 Underfull \hbox (badness 10000) in paragraph at lines 92--93
 
  []
@@ -1646,7 +1647,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 106--117
 
 
 
-[33]
+[34]
 Underfull \hbox (badness 10000) in paragraph at lines 119--120
 
  []
@@ -1658,11 +1659,11 @@ Overfull \hbox (55.63855pt too wide) in paragraph at lines 121--126
 
 
 
-[34]) (./teil_2/planen.tex
+[35]) (./teil_2/planen.tex
 Kapitel 10.
 
 
-[35
+[36
 
 ]
 \openout2 = `teil_2/arbeitspakete.aux'.
@@ -1692,7 +1693,7 @@ Overfull \hbox (4.24113pt too wide) in alignment at lines 55--65
  [] [] 
  []
 
-[36
+[37
 
 ]
 Overfull \hbox (4.24113pt too wide) in alignment at lines 67--77
@@ -1721,7 +1722,7 @@ Overfull \hbox (4.24113pt too wide) in alignment at lines 121--131
 
 
 
-[37]
+[38]
 Overfull \hbox (4.24113pt too wide) in alignment at lines 133--143
  [] [] 
  []
@@ -1741,7 +1742,7 @@ Overfull \hbox (4.24113pt too wide) in alignment at lines 169--179
  [] [] 
  []
 
-[38]
+[39]
 Overfull \hbox (4.24113pt too wide) in alignment at lines 184--194
  [] [] 
  []
@@ -1761,7 +1762,7 @@ Overfull \hbox (4.24113pt too wide) in alignment at lines 223--233
  [] [] 
  []
 
-[39]
+[40]
 Overfull \hbox (4.24113pt too wide) in alignment at lines 235--245
  [] [] 
  []
@@ -1781,7 +1782,7 @@ Overfull \hbox (4.24113pt too wide) in alignment at lines 274--284
  [] [] 
  []
 
-[40]
+[41]
 Overfull \hbox (4.24113pt too wide) in alignment at lines 286--296
  [] [] 
  []
@@ -1793,8 +1794,8 @@ Overfull \hbox (4.24113pt too wide) in alignment at lines 298--308
 
 
 
-[41])
-<ressourcen/Klassendiagramm-Backend.jpg, id=639, 688.5725pt x 259.97125pt>
+[42])
+<ressourcen/Klassendiagramm-Backend.jpg, id=669, 688.5725pt x 259.97125pt>
 File: ressourcen/Klassendiagramm-Backend.jpg Graphic file (type jpg)
 <use ressourcen/Klassendiagramm-Backend.jpg>
 Package pdftex.def Info: ressourcen/Klassendiagramm-Backend.jpg  used on input 
@@ -1802,45 +1803,82 @@ line 25.
 (pdftex.def)             Requested size: 316.12341pt x 119.3502pt.
 
 
-[42
+[43
 
 
 ]
 
-[43 <./ressourcen/Klassendiagramm-Backend.jpg>]
-
-[44]
+[44 <./ressourcen/Klassendiagramm-Backend.jpg>]
 
 [45]
+
+[46]
 Underfull \hbox (badness 10000) in paragraph at lines 91--92
 
  []
 
+<ressourcen/Sequenzdiagramm-Erweiterung.jpg, id=691, 804.00375pt x 302.12875pt>
+
+File: ressourcen/Sequenzdiagramm-Erweiterung.jpg Graphic file (type jpg)
+<use ressourcen/Sequenzdiagramm-Erweiterung.jpg>
+Package pdftex.def Info: ressourcen/Sequenzdiagramm-Erweiterung.jpg  used on in
+put line 103.
+(pdftex.def)             Requested size: 395.15277pt x 148.48694pt.
 
 
-[46]) (./teil_2/entscheiden.tex
+[47]
+
+[48 <./ressourcen/Sequenzdiagramm-Erweiterung.jpg>]
+
+[49]
+\openout2 = `teil_2/testkonzepte.aux'.
+
+ (./teil_2/testkonzepte.tex
+Overfull \hbox (4.24113pt too wide) in alignment at lines 3--27
+ [] [] 
+ []
+
+
+Overfull \hbox (4.24113pt too wide) in alignment at lines 29--53
+ [] [] 
+ []
+
+
+Overfull \hbox (4.24113pt too wide) in alignment at lines 55--79
+ [] [] 
+ []
+
+
+
+[50
+
+]
+
+[51])) (./teil_2/entscheiden.tex
 Kapitel 11.
 
 
-[47
+[52
+
+
 
 ]) (./teil_2/realisieren.tex
 Kapitel 12.
 
 
-[48
+[53
 
 ]) (./teil_2/kontrollieren.tex
 Kapitel 13.
 
 
-[49
+[54
 
 ]) (./teil_2/auswerten.tex
 Kapitel 14.
 
 
-[50
+[55
 
 ]) (./global/glossar.tex (./main.gls)) (./global/abbildungsverzeichnis.tex
 (./main.lof)
@@ -1849,7 +1887,7 @@ Kapitel 14.
 
 ) (./global/quellenverzeichnis.tex
 
-[51
+[56
 
 
 ]
@@ -1859,27 +1897,27 @@ Package biblatex Warning: No driver for 'ook'.
 
 )
 
-[52
+[57
 
 ] 
 enddocument/afterlastpage: lastpage setting LastPage.
-(./main.aux (./teil_2/arbeitspakete.aux))
+(./main.aux (./teil_2/arbeitspakete.aux) (./teil_2/testkonzepte.aux))
  ***********
 LaTeX2e <2024-06-01> patch level 2
 L3 programming layer <2024-07-20>
  ***********
 Package rerunfilecheck Info: File `main.out' has not changed.
-(rerunfilecheck)             Checksum: 5E9F8EA17CEBD73EF271170826E98D26;10450.
+(rerunfilecheck)             Checksum: 448EEDCDEF6A643992DFBA540B1368A8;11277.
 Package logreq Info: Writing requests to 'main.run.xml'.
 \openout1 = `main.run.xml'.
 
  ) 
 Here is how much of TeX's memory you used:
- 33465 strings out of 473579
- 603942 string characters out of 5732264
- 1950960 words of memory out of 5000000
- 55672 multiletter control sequences out of 15000+600000
- 576240 words of font info for 75 fonts, out of 8000000 for 9000
+ 33563 strings out of 473579
+ 606057 string characters out of 5732264
+ 1951960 words of memory out of 5000000
+ 55725 multiletter control sequences out of 15000+600000
+ 579886 words of font info for 85 fonts, out of 8000000 for 9000
  1143 hyphenation exceptions out of 8191
  109i,12n,107p,2373b,2463s stack positions out of 10000i,1000n,20000p,200000b,200000s
 <c:/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb><c:/tex
@@ -1889,17 +1927,18 @@ texmf-dist/fonts/type1/public/cm-super/sfbx1200.pfb><c:/texlive/2024/texmf-dist
 e1/public/cm-super/sfbx1728.pfb><c:/texlive/2024/texmf-dist/fonts/type1/public/
 cm-super/sfbx2074.pfb><c:/texlive/2024/texmf-dist/fonts/type1/public/cm-super/s
 fbx2488.pfb><c:/texlive/2024/texmf-dist/fonts/type1/public/cm-super/sfcc1095.pf
-b><c:/texlive/2024/texmf-dist/fonts/type1/public/cm-super/sfrm0800.pfb><c:/texl
-ive/2024/texmf-dist/fonts/type1/public/cm-super/sfrm1000.pfb><c:/texlive/2024/t
-exmf-dist/fonts/type1/public/cm-super/sfrm1095.pfb><c:/texlive/2024/texmf-dist/
-fonts/type1/public/cm-super/sfrm1200.pfb><c:/texlive/2024/texmf-dist/fonts/type
-1/public/cm-super/sfrm1440.pfb><c:/texlive/2024/texmf-dist/fonts/type1/public/c
-m-super/sfti1095.pfb><c:/texlive/2024/texmf-dist/fonts/type1/public/cm-super/sf
-tt1095.pfb>
-Output written on main.pdf (53 pages, 691089 bytes).
+b><c:/texlive/2024/texmf-dist/fonts/type1/public/cm-super/sfrm0600.pfb><c:/texl
+ive/2024/texmf-dist/fonts/type1/public/cm-super/sfrm0800.pfb><c:/texlive/2024/t
+exmf-dist/fonts/type1/public/cm-super/sfrm1000.pfb><c:/texlive/2024/texmf-dist/
+fonts/type1/public/cm-super/sfrm1095.pfb><c:/texlive/2024/texmf-dist/fonts/type
+1/public/cm-super/sfrm1200.pfb><c:/texlive/2024/texmf-dist/fonts/type1/public/c
+m-super/sfrm1440.pfb><c:/texlive/2024/texmf-dist/fonts/type1/public/cm-super/sf
+ti1095.pfb><c:/texlive/2024/texmf-dist/fonts/type1/public/cm-super/sftt0900.pfb
+><c:/texlive/2024/texmf-dist/fonts/type1/public/cm-super/sftt1095.pfb>
+Output written on main.pdf (58 pages, 800085 bytes).
 PDF statistics:
- 832 PDF objects out of 1000 (max. 8388607)
- 728 compressed objects within 8 object streams
- 181 named destinations out of 1000 (max. 500000)
- 575 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 920 PDF objects out of 1000 (max. 8388607)
+ 805 compressed objects within 9 object streams
+ 210 named destinations out of 1000 (max. 500000)
+ 620 words of extra memory for PDF output out of 10000 (max. 10000000)
 

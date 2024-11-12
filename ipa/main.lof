@@ -1,21 +1,22 @@
 \contentsline {figure}{\numberline {1}{\ignorespaces Logo der Ergon Informatik AG~\blx@tocontentsinit {0}\parencite {ergonlogo}}}{1}{figure.caption.1}%
 \babel@toc {ngerman}{}\relax 
 \addvspace {10\p@ }
-\contentsline {figure}{\numberline {1.1}{\ignorespaces Anzeigen und bearbeiten der Tasks}}{6}{figure.caption.2}%
+\contentsline {figure}{\numberline {1.1}{\ignorespaces Anzeigen und bearbeiten der Tasks}}{7}{figure.caption.2}%
 \addvspace {10\p@ }
 \addvspace {10\p@ }
 \addvspace {10\p@ }
-\contentsline {figure}{\numberline {4.1}{\ignorespaces Arbeitsplatz des Lernenden}}{9}{figure.caption.3}%
+\contentsline {figure}{\numberline {4.1}{\ignorespaces Arbeitsplatz des Lernenden}}{10}{figure.caption.3}%
 \addvspace {10\p@ }
-\contentsline {figure}{\numberline {5.1}{\ignorespaces Git Commit History des Quellcodes}}{12}{figure.caption.4}%
-\contentsline {figure}{\numberline {5.2}{\ignorespaces Git Commit History der Dokumentation}}{13}{figure.caption.5}%
-\addvspace {10\p@ }
-\addvspace {10\p@ }
+\contentsline {figure}{\numberline {5.1}{\ignorespaces Git Commit History des Quellcodes}}{13}{figure.caption.4}%
+\contentsline {figure}{\numberline {5.2}{\ignorespaces Git Commit History der Dokumentation}}{14}{figure.caption.5}%
 \addvspace {10\p@ }
 \addvspace {10\p@ }
-\contentsline {figure}{\numberline {9.1}{\ignorespaces Ablauf eines GET-Requests für das Erstellen der Tabelle}}{30}{figure.caption.6}%
 \addvspace {10\p@ }
-\contentsline {figure}{\numberline {10.1}{\ignorespaces Klassendiagramm für das Backend}}{43}{figure.caption.7}%
+\addvspace {10\p@ }
+\contentsline {figure}{\numberline {9.1}{\ignorespaces Ablauf eines GET-Requests für das Erstellen der Tabelle}}{31}{figure.caption.6}%
+\addvspace {10\p@ }
+\contentsline {figure}{\numberline {10.1}{\ignorespaces Klassendiagramm für das Backend}}{44}{figure.caption.7}%
+\contentsline {figure}{\numberline {10.2}{\ignorespaces Ablauf eines Filter-Request}}{48}{figure.caption.8}%
 \addvspace {10\p@ }
 \addvspace {10\p@ }
 \addvspace {10\p@ }

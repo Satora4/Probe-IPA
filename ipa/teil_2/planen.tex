@@ -93,14 +93,48 @@ Für diesen Filter wird eine Auswahlliste erstellt mit der folgenden Auswahl:
 \noindent Der ausgewählte Status wird ins Backend geschickt. Die Funktion von diesem Endpoint, welcher den Request bekommt, besteht daraus einen Anfrage an die Datenbank zu machen. Die Filterung, wie in den Anforderungen \ref{ch:erweiterung-filter} beschrieben, passiert darauf hin direkt auf der Datenbank um die Performance so wenig wie möglich zu beeinflussen. Würde die Filterung im Backend geschehen, würde das die Performance ein wenig beeinflussen, weshalb es gleich auf der Datenbank gemacht wird. Dies gilt auch für die beiden anderen Filter.
 
 \subsection{Begriffe im Nachrichten Inhalt Filtern}
-Dieser Filter wird mithilfe von einem Textfeld erstellt. In dieses Textfeld können Begriffe hineingeschrieben werden und durch einen Knopf gefiltert werden. Hier wird auch wieder ein Request an das Backend gesendet, um den Nachrichteninhalt von den Elementen in der Datenbank-Tabelle MQ\_TABLE nach diesen Begriffen zu filtern und anschliessend das Ergebnis wieder zurück zu senden an das Frontend. 
+Dieser Filter wird mithilfe von einem Textfeld erstellt. In dieses Textfeld können Begriffe hineingeschrieben und durch einen Knopf gefiltert werden. Hier wird auch wieder ein Request an das Backend gesendet, um den Nachrichteninhalt von den Elementen in der Datenbank-Tabelle MQ\_TABLE nach diesen Begriffen zu filtern und anschliessend das Ergebnis wieder zurückzusenden an das Frontend.
 
-\subsection{Ablaufdiagramm für die Erweiterung Filter}
-%\begin{figure}[H]
-%	\begin{center}
-%		\includegraphics[width=0.8\textwidth]{ressourcen/Ablaufdiagramm}
-%		\caption[Ablauf eines Filter-Request]{Ablauf eines Filter-Request}\label{fig:ablaufdiagramm-erweiterung-filter}
-%	\end{center}
-%\end{figure}
+\subsection{Sequenzdiagramm für die Erweiterung Filter}
+In diesem Diagramm wird der Ablauf von einem Filter-Request an das Backend dargestellt. Wegen Zeitgründen werden nicht alle Fälle dargestellt. Sie beruht nur auf einem, zwei und drei Filtern, da alle anderen Möglichkeiten einen ähnlichen Ablauf haben wie die hier dargestellten drei Abläufe.
+
+\begin{figure}[H]
+	\begin{center}
+		\includegraphics[width=1\textwidth]{ressourcen/Sequenzdiagramm-Erweiterung}
+		\caption[Ablauf eines Filter-Request]{Ablauf eines Filter-Request}\label{fig:sequenzdiagramm-erweiterung-filter}
+	\end{center}
+\end{figure}
+
+Folgende Schritte werden im Sequenzdiagramm durchgeführt.
+\begin{enumerate}
+	\item Im Frontend wird durch das auswählen eines Filters einen Request an das Backend gesendet.
+	\item Im Backend wird dieser Request angenommen und es wird geprüft welcher Filter genutzt werden sollte.
+	\item Im Fallen vom einem Filter wird nichts gross angepasst und eine Anfrage an die Datenbank wird gemacht.
+	\item Falls zwei Filter ausgewählt werden, wird eine SQL-Query generiert die ein AND zwischen beiden Filtern beinhaltet um nach beidem gleichzeitig zu Filtern. Anschliessend wird eine Anfrage an die Datenbank gemacht.
+	\item Bei allen drei Filter wird, ähnlich wie bei zwei Filter, ein AND zwischen allen drei Filter hinzugefügt und eine Anfrage an das Backend gemacht.
+	\item Das erhaltene Resultat von der Datenbank wird dann gemapped und zurück an das Frontend gesendet.
+\end{enumerate}
+
+\section{Testkonzept}
+Um sicherzustellen, dass die Funktionalität der Implementation fehlerfrei funktioniert und alle Anforderungen richtig eingebunden wurden, wird ein Testkonzept erstellt. Darin befindet sich eine kleine Beschreibung, die Art des Tests, die Vorbedingungen, eine Konfiguration, der Ablauf und das erwartete Resultat.
+
+\subsection{Benötigte Testmittel}
+Um die Tests zu implementieren werden verschiedene Tools und Technologien verwendet. Diese werden hier aufgeführt:
+
+\paragraph{IntelliJ (IDE)} \footnote{\url{https://www.jetbrains.com/de-de/idea/}} ist die Entwicklungsumgebung in der die Tests geschrieben werden.
+\paragraph{Postman} \footnote{\url{https://www.postman.com/}} wird für das manuelle Testen von den Endpointen verwendet.
+\paragraph{Mockito} \footnote{\url{https://site.mockito.org/}} wird für das Mocken von Objekten und Klassen verwendet. Mocking ersetzt Objekte und Klassen durch simulierte Versionen um das erwartete Verhalten nachzuahmen.
+
+\subsection{Automatisierte Tests}
+Automatisierte Tests werden nur für die Funktionen im Backend geschrieben. Dies aus dem Grund, weil im Projekt CardX keine Frontend-Tests existieren und diese Implementationen gleich aufgebaut sein sollen wie die anderen Implementationen im Frontend. Sie werden mithilfe von Unit- und Integration-Tests implementiert.
+
+Die Unit-Tests werden für einzelne Funktionen, wie zum Beispiel einen Mapper, verwendet. Sie brauchen keine anderen Systeme und können ohne weiteres ausgeführt werden.
+
+Die Integration-Tests werden für Datenbank-Abfragen verwendet, um zu prüfen, ob die Anfrage und das erhaltene Objekt korrekt sind. Diese Art von Testing testet die Zusammenarbeit von verschiedenen Komponenten in einem System, in diesem Fall das Backend und die Datenbank.
+
+\section{Manuelle Tests}
+Die manuellen Tests werden für das Backend, mit Postman, und das Frontend durchgeführt. Die neuen Komponenten werden vom Lernenden selbst in einer lokalen Umgebung getestet. Sie werden während der Implementation durchgeführt, um nicht später auf Fehler zu treffen und die Implementation zu vereinfachen.
+
+\include{teil_2/testkonzepte}
 
 \newpage
