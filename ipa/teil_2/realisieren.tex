@@ -1,2 +1,72 @@
 \chapter{Realisieren}\label{ch:realisieren}
+Dieses Kapitel zeigt die in der IPERKA-Phase «Realisieren» durchgeführten Arbeiten auf. In dieser Phase wird beschrieben wie der Lernende die Aufgabe umgesetzt hat und spricht Probleme bei der Umsetzung an.
+
+\section{Endpoints für die Mindestanforderungen erstellen}
+Die Reihenfolge, welche für diesen Abschnitt folgt, ist die Reihenfolge in der Implementiert wurde.
+
+\subsection{MqInDTO}
+Die Implementierung wurde mit der Erstellung von der MqInDto.java Klasse gestartet. Diese Klasse wird öfter in anderen Klassen verwendet und ist aus diesem Grund ein guter Startpunkt. Sie wurde mithilfe der MqOutDto.java Klasse als Beispiel erstellt, um die Konsistenz zwischen den verschiedenen DTO-Klassen beizubehalten. Sie beinhaltet mehrere Annotationen, um den Code kurz zu halten und Zeit bei der Implementation zu sparen:
+\paragraph{@Data} \footnote{\url{https://projectlombok.org/features/Data}} generiert Getter, Setter und mehr .
+\paragraph{@SuperBuilder} \footnote{\url{https://projectlombok.org/features/experimental/SuperBuilder}} erstellt ein Builder, welcher auch Felder von einer Superklasse verwenden kann.
+\paragraph{@NoArgsConstructor} \footnote{\url{https://projectlombok.org/features/constructor}} generiert einen Konstruktor ohne Parameter.
+\paragraph{@Schema} \footnote{\url{https://www.baeldung.com/swagger-parameter-vs-schema}} für die Kontrolle von spezifischen Definitionen wie Beschreibung oder Beispiele.
+\paragraph{@NotNull} \footnote{\url{https://www.baeldung.com/java-notnull-method-parameter}} stellt sich, dass das Feld nicht «null» ist.\newline
+
+\noindent Anschliessend wurden die Felder erstellt, mit den oben entsprechenden genannten Annotationen, die für die Tabelle im Frontend genutzt werden.
+
+\subsection{MqInMapper}
+Die Klasse MqInMapper.java hat die Annotation @Component, sodass Springboot diese Klasse instanziieren und sie mit allen angegebenen Abhängigkeiten injizieren kann.
+
+Zwei Funktionen namens toMqInDto() und listToMqInDto() wurden in dieser Klasse erstellt. Die erste Funktion macht ein Mapping von MqTablePC (die ursprüngliche MqInPC-Klasse) zu MqInDto. Sie verwendet den Builder von der zuvor genutzten Annotation @SuperBuilder. Die zweite Funktion ruft die erste mithilfe von einem Stream auf. Der Stream wird verwendet, um jedes Element der Liste mit der Funktion toMqInDto aufzurufen. Dies wird mit .map() gemacht. Der Stream ermöglicht es, diese Aufgabe in einer kurzen Zeile zu schreiben, anstatt mit einem Loop jedes einzele Element der Liste hervorzuholen, zu mappen und anschliessend in einer zweiten Liste zu speichen. Die Funktion hat durch das nur insgesammt 3 Zeilen und vereinfacht das lesen.
+
+\begin{verbatim}
+	public List<MqInDto> listToMqInDto(List<MqTablePC> listOfMqTablePCs) {
+		return listOfMqTablePCs.stream().map(this::toMqInDto).toList();
+	}
+\end{verbatim}
+
+\subsection{MqInService}
+Um die Struktur von eine Service vorzugeben, wurde ein Interface mit dem Namen MqInService erstellt. Dieses Interface wird später für die Klasse MqInServiceImpl.java und MqInServiceMockImpl.java verwendet und beinhaltet im Moment eine Funktion für das hervorholen von allen MqTables in der Datenbank.
+
+\subsection{MqInServiceImpl}
+MqInServiceImpl wird vom Interface MqInService implementiert. Sie wird mit der Annotation @Service für Springboot als Service deklariert. Die Klasse enthält die vom Interface vorgegebene Funktion getMqTables(). Sie ruft eine Funktion von der Klasse MqTableDao (die ursprüngliche MqInDao-Klasse) auf die alle MqTable Einträge mit dem Status «Error» von der Datenbank hervorholt und sie auf 25 Einträge limitiert.
+
+In dieser Klasse wurde auch ein Konstruktor erstellt. Bei dieser Implementierung trat ein Problem auf welches die Applikation nicht starten lies. Bei dem Parameter MqTableDao erschien die Meldung «Could not autowire. No beans of 'MqTableDao' type found.». Das Problem war, dass für die Klasse MqTableDao noch kein Bean erstellt wurde, obwohl die Klasse schon vorher existierte. Das Bean wurde anschliessend in der Klasse WebBackendAdminSpringConfiguration.java erstellt.
+
+\subsection{MqTableDao}
+Diese Klasse existierte bereits und war ursprünglich als MqInDao geplant. Durch das musste nur eine Funktion hinzugefügt werden. Da es ein Interface ist, wurde nur der Name und die benötigten Parameter hinzugefügt. Ausserdem wurde ein Kommentar für diese Funktion erstellt. Der Kommentar beinhaltet eine kurze Beschreibung der Funktion und was sie zurückgibt. Mithilfe dieses Kommentars kann man jetzt über die Funktion drüberfahren und die Beschreibung wird als kurze Erklärung angezeigt.
+
+\subsection{MqTableHibernateDao}
+In der Klasse MqTableHibernateDao wird das Interface MqTableDao implementiert und muss durch das auch die neu erstellte Funktion implementieren.
+
+Die Funktion nutzt einen CriteriaBuilder, um eine SQL-Query zu erstellen. Mit dieser Klasse konnte die Query so generiert werden, dass sie nach Enträgen filtert, die einen MQ\_IN\_STATUS von ERROR, als die Nummer Drei, haben. Die Query wird mithilfe von der Klasse CriteriaQuery bearbeitet und mit der Klasse Root können die einzelnen Spalten hervorgeholt werden, um sie zu vergleichen.
+
+Um die Einträge auf 25 zu limitieren, musste noch die Klasse TypedQuery verwendete werden, welche dies ermöglichte.
+
+\begin{verbatim}
+	@Override
+	public List<MqTablePC> findAllWithStatusErrorLimitedTo25() {
+		CriteriaBuilder cb = getSession().getCriteriaBuilder();
+		CriteriaQuery<MqTablePC> query = cb.createQuery(MqTablePC.class);
+		Root<MqTablePC> mqTable = query.from(MqTablePC.class);
+		
+		query.where(
+			cb.equal(mqTable.get(FN_MQ_IN_STATUS), ERROR)
+		).orderBy(cb.desc(mqTable.get(FN_MODIFIED_AT)));
+		
+		TypedQuery<MqTablePC> typedQuery = getSession().createQuery(query);
+		typedQuery.setMaxResults(25);
+		
+		return typedQuery.getResultList();
+	}
+\end{verbatim}
+
+\subsection{MqInResource}
+Die Klasse MqInresource beinhaltet den geplanten Endpoint welcher im Arbeitspaket \ref{tab:realisieren-4.1} beschrieben wurde. Die Klasse wurde mit @RestController annotiert, sodass Spring weiss das diese Klasse Endpoints enthält. Der Endpoint selbst hat drei Annotationen:
+
+\paragraph{@GetMapping} \footnote{\url{https://www.geeksforgeeks.org/spring-postmapping-and-getmapping-annotation/}} deklariert diesen Endpoint als ein GET-Request.
+\paragraph{@Operation} \footnote{\url{https://www.baeldung.com/swagger-operation-vs-apiresponse}} beschreibt die Funktion von diesem Endpoint.
+\paragraph{@RequirePermission} \footnote{Vom Projekt CardX implementiert} stellt die Befugnis von diesem Endpoint ein.
+
+
 \newpage

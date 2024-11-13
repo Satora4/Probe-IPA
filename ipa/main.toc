@@ -101,11 +101,46 @@
 \contentsline {paragraph}{Mockito}{49}{subsection.10.6.1}%
 \contentsline {subsection}{\numberline {10.6.2}Automatisierte Tests}{49}{subsection.10.6.2}%
 \contentsline {section}{\numberline {10.7}Manuelle Tests}{49}{section.10.7}%
-\contentsline {subsection}{\numberline {10.7.1}Testfälle der Mindestanforderungen}{50}{subsection.10.7.1}%
-\contentsline {chapter}{\numberline {11}Entscheiden}{52}{chapter.11}%
-\contentsline {chapter}{\numberline {12}Realisieren}{53}{chapter.12}%
-\contentsline {chapter}{\numberline {13}Kontrollieren}{54}{chapter.13}%
-\contentsline {chapter}{\numberline {14}Auswerten}{55}{chapter.14}%
-\contentsline {chapter}{Glossar}{56}{section*.9}%
-\contentsline {chapter}{Abbildungsverzeichnis}{56}{section*.11}%
-\contentsline {chapter}{Quellenverzeichnis}{57}{chapter*.12}%
+\contentsline {section}{\numberline {10.8}Testfälle}{50}{section.10.8}%
+\contentsline {subsection}{\numberline {10.8.1}Testfälle der Mindestanforderungen}{50}{subsection.10.8.1}%
+\contentsline {subsection}{\numberline {10.8.2}Testfälle der Erweiterung Filter}{52}{subsection.10.8.2}%
+\contentsline {chapter}{\numberline {11}Entscheiden}{54}{chapter.11}%
+\contentsline {section}{\numberline {11.1}Filterung der Daten auf dem Server}{54}{section.11.1}%
+\contentsline {subsection}{\numberline {11.1.1}Vorteile}{54}{subsection.11.1.1}%
+\contentsline {paragraph}{Flexibilität und Anpassbarkeit}{54}{subsection.11.1.1}%
+\contentsline {paragraph}{Unabhängigkeit von der Datenbank}{54}{subsection.11.1.1}%
+\contentsline {paragraph}{Mehr Kontrolle über die Logik}{54}{subsection.11.1.1}%
+\contentsline {subsection}{\numberline {11.1.2}Nachteile}{54}{subsection.11.1.2}%
+\contentsline {paragraph}{Leistungsprobleme bei vielen Daten}{54}{subsection.11.1.2}%
+\contentsline {paragraph}{Langsamere Antwortzeiten}{54}{subsection.11.1.2}%
+\contentsline {paragraph}{Zusätzliche Verarbeitungsschritte}{54}{subsection.11.1.2}%
+\contentsline {section}{\numberline {11.2}Filterung der Daten auf der Datenbank}{55}{section.11.2}%
+\contentsline {subsection}{\numberline {11.2.1}Vorteile}{55}{subsection.11.2.1}%
+\contentsline {paragraph}{Effizienteres Filtering}{55}{subsection.11.2.1}%
+\contentsline {paragraph}{Reduzierter Speicherbedarf im Bankend}{55}{subsection.11.2.1}%
+\contentsline {paragraph}{Minimierung der Datenübertragung}{55}{subsection.11.2.1}%
+\contentsline {subsection}{\numberline {11.2.2}Nachteile}{55}{subsection.11.2.2}%
+\contentsline {paragraph}{Komplexität von Abfragen}{55}{subsection.11.2.2}%
+\contentsline {paragraph}{SQL-Kenntnisse erforderlich}{55}{subsection.11.2.2}%
+\contentsline {paragraph}{Datenbankbelastung}{55}{subsection.11.2.2}%
+\contentsline {section}{\numberline {11.3}Entscheidung}{55}{section.11.3}%
+\contentsline {chapter}{\numberline {12}Realisieren}{56}{chapter.12}%
+\contentsline {section}{\numberline {12.1}Endpoints für die Mindestanforderungen erstellen}{56}{section.12.1}%
+\contentsline {subsection}{\numberline {12.1.1}MqInDTO}{56}{subsection.12.1.1}%
+\contentsline {paragraph}{@Data}{56}{subsection.12.1.1}%
+\contentsline {paragraph}{@SuperBuilder}{56}{subsection.12.1.1}%
+\contentsline {paragraph}{@NoArgsConstructor}{56}{subsection.12.1.1}%
+\contentsline {paragraph}{@Schema}{56}{subsection.12.1.1}%
+\contentsline {paragraph}{@NotNull}{56}{subsection.12.1.1}%
+\contentsline {subsection}{\numberline {12.1.2}MqInMapper}{57}{subsection.12.1.2}%
+\contentsline {subsection}{\numberline {12.1.3}MqInService}{57}{subsection.12.1.3}%
+\contentsline {subsection}{\numberline {12.1.4}MqInServiceImpl}{57}{subsection.12.1.4}%
+\contentsline {subsection}{\numberline {12.1.5}MqTableDao}{57}{subsection.12.1.5}%
+\contentsline {subsection}{\numberline {12.1.6}MqTableHibernateDao}{58}{subsection.12.1.6}%
+\contentsline {subsection}{\numberline {12.1.7}MqInResource}{58}{subsection.12.1.7}%
+\contentsline {paragraph}{@GetMapping}{58}{subsection.12.1.7}%
+\contentsline {chapter}{\numberline {13}Kontrollieren}{59}{chapter.13}%
+\contentsline {chapter}{\numberline {14}Auswerten}{60}{chapter.14}%
+\contentsline {chapter}{Glossar}{61}{section*.9}%
+\contentsline {chapter}{Abbildungsverzeichnis}{61}{section*.11}%
+\contentsline {chapter}{Quellenverzeichnis}{62}{chapter*.12}%

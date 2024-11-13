@@ -1,34 +1,11 @@
+\section{Testfälle}
+Alle Automatischen Tests werden auf 25 Einträge limitiert. Sie haben alle den Fehlerzustand MQ\_IN\_STATUS und sind absteigend sortiert nach MODIFIED\_AT. Die erhaltenen Einträge beinhalten nur die Spalten die vorgegeben sind.
+
 \subsection{Testfälle der Mindestanforderungen}
 
 \begin{longtable}{p{.3\textwidth}|p{.65\textwidth}}
 	\hline
 	\textbf{Testfall}               & \textbf{M1} \\
-	\hline
-	\textbf{Beschreibung}   		& Mapping von DAO zu DTO \\
-	\hline
-	\textbf{Art}    				& Unit-Test \\
-	\hline
-	\textbf{Vorbedingungen}    		& Das Backend läuft. \\
-	\hline
-	\textbf{Konfiguration}   	 	& 
-	\begin{itemize}
-		\item Ein DAO-Objekt ist erstellt und gefüllt mit Daten.
-		\item Ein DTO-Objekt ist erstellt und gefüllt mit den gemappten Daten.
-	\end{itemize} \\
-	\hline
-	\textbf{Ablauf}    				& 
-	\begin{enumerate}
-		\item Die Funktion mapDaoToDto() ausführen mit dem DAO Objekt als Parameter.
-		\item Der erhaltene Wert mit dem DTO-Objekt vergleichten.
-	\end{enumerate} \\
-	\hline
-	\textbf{Erwartetes Ergebnis}    & Es gibt keine Unterschiede zwischen dem generierten DTO- und dem bereits existierendem DTO-Objekt. \\
-	\hline
-\end{longtable}\label{tab:testfall-M1}
-
-\begin{longtable}{p{.3\textwidth}|p{.65\textwidth}}
-	\hline
-	\textbf{Testfall}               & \textbf{M2} \\
 	\hline
 	\textbf{Beschreibung}   		& Datenbank-Abfrage für die Erstellung von der Tabelle \\
 	\hline
@@ -50,32 +27,190 @@
 	\hline
 	\textbf{Erwartetes Ergebnis}    & Es gibt keine Unterschiede zwischen den Daten aus der Datenbank und den erwarteten Daten.  \\
 	\hline
+\end{longtable}\label{tab:testfall-M1}
+
+\begin{longtable}{p{.3\textwidth}|p{.65\textwidth}}
+	\hline
+	\textbf{Testfall}               & \textbf{M2} \\
+	\hline
+	\textbf{Beschreibung}   		& Datenbank-Abfrage findet keine passende Abfrage. \\
+	\hline
+	\textbf{Art}    				& Integration-Test \\
+	\hline
+	\textbf{Vorbedingungen}    		& Das Backend läuft und eine passende Datenbank existiert. \\
+	\hline
+	\textbf{Konfiguration}   	 	& 
+	\begin{itemize}
+		\item Der erwartete Fehlerzustand wird erstellt.
+	\end{itemize} \\
+	\hline
+	\textbf{Ablauf}    				& 
+	\begin{enumerate}
+		\item Die Datenbank-Abfrage wird durchgeführt.
+		\item Der Code kann mit dem Sonderfall umgehen und schreibt eine Fehlernachricht.
+	\end{enumerate} \\
+	\hline
+	\textbf{Erwartetes Ergebnis}    & Das Programm wirft keinen Fehler und sendet stattdessen eine Fehlernachricht. \\
+	\hline
 \end{longtable}\label{tab:testfall-M2}
 
 \begin{longtable}{p{.3\textwidth}|p{.65\textwidth}}
 	\hline
-	\textbf{Testfall}               & \textbf{M} \\
+	\textbf{Testfall}               & \textbf{M3} \\
 	\hline
-	\textbf{Beschreibung}   		&  \\
+	\textbf{Beschreibung}   		& Datenbank ist nicht erreichbar. \\
 	\hline
-	\textbf{Art}    				&  \\
+	\textbf{Art}    				& Integration-Test \\
+	\hline
+	\textbf{Vorbedingungen}    		& Das Backend läuft un die Datenbank existiert nicht. \\
+	\hline
+	\textbf{Konfiguration}   	 	& 
+	\begin{itemize}
+		\item Der erwartete Fehlerzustand wird erstellt.
+	\end{itemize} \\
+	\hline
+	\textbf{Ablauf}    				& 
+	\begin{enumerate}
+		\item Die Datenbank-Abfrage wird durchgeführt.
+		\item Der Code kann mit dem Sonderfall umgehen und schreibt eine Fehlernachricht.
+	\end{enumerate} \\
+	\hline
+	\textbf{Erwartetes Ergebnis}    & Das Programm wirft keinen Fehler und sendet stattdessen eine Fehlernachricht. \\
+	\hline
+\end{longtable}\label{tab:testfall-M3}
+
+\begin{longtable}{p{.3\textwidth}|p{.65\textwidth}}
+	\hline
+	\textbf{Testfall}               & \textbf{M4} \\
+	\hline
+	\textbf{Beschreibung}   		& Mapping von DAO zu DTO \\
+	\hline
+	\textbf{Art}    				& Unit-Test \\
 	\hline
 	\textbf{Vorbedingungen}    		& Das Backend läuft. \\
 	\hline
 	\textbf{Konfiguration}   	 	& 
 	\begin{itemize}
-		\item 
-		\item 
+		\item Ein DAO-Objekt ist erstellt und gefüllt mit Daten.
+		\item Ein DTO-Objekt ist erstellt und gefüllt mit den gemappten Daten.
 	\end{itemize} \\
 	\hline
 	\textbf{Ablauf}    				& 
 	\begin{enumerate}
-		\item 
-		\item 
+		\item Die Funktion mapDaoToDto() ausführen mit dem DAO Objekt als Parameter.
+		\item Der erhaltene Wert mit dem DTO-Objekt vergleichten.
 	\end{enumerate} \\
 	\hline
-	\textbf{Erwartetes Ergebnis}    &  \\
+	\textbf{Erwartetes Ergebnis}    & Es gibt keine Unterschiede zwischen dem generierten DTO- und dem bereits existierendem DTO-Objekt. \\
 	\hline
-\end{longtable}\label{tab:testfall-M}
+\end{longtable}\label{tab:testfall-M4}
+
+\subsection{Testfälle der Erweiterung Filter}
+
+\begin{longtable}{p{.3\textwidth}|p{.65\textwidth}}
+	\hline
+	\textbf{Testfall}               & \textbf{M5} \\
+	\hline
+	\textbf{Beschreibung}   		& Datenbank-Abfrage für das Filtern von einem Filter \\
+	\hline
+	\textbf{Art}    				& Integration-Test \\
+	\hline
+	\textbf{Vorbedingungen}    		& Das Backend läuft und eine passende Datenbank existiert. \\
+	\hline
+	\textbf{Konfiguration}   	 	& 
+	\begin{itemize}
+		\item Die Daten für den Aufruf werden erstellt.
+		\item Der Filter wird gesetzt.
+		\item Die erwarteten Daten werden erstellt.
+	\end{itemize} \\
+	\hline
+	\textbf{Ablauf}    				& 
+	\begin{enumerate}
+		\item Die Datenbank-Abfrage wird durchgeführt.
+		\item Die erhaltenen Daten werden überprüft mit den bereits erstellten Daten.
+	\end{enumerate} \\
+	\hline
+	\textbf{Erwartetes Ergebnis}    & Es gibt keine Unterschiede zwischen den gefilterten Daten aus der Datenbank und den erwarteten Daten. \\
+	\hline
+\end{longtable}\label{tab:testfall-M5}
+
+\begin{longtable}{p{.3\textwidth}|p{.65\textwidth}}
+	\hline
+	\textbf{Testfall}               & \textbf{M6} \\
+	\hline
+	\textbf{Beschreibung}   		& Datenbank-Abfrage für das Filtern von mehreren Filter \\
+	\hline
+	\textbf{Art}    				& Integration-Test \\
+	\hline
+	\textbf{Vorbedingungen}    		& Das Backend läuft und eine passende Datenbank existiert. \\
+	\hline
+	\textbf{Konfiguration}   	 	& 
+	\begin{itemize}
+		\item Die Daten für den Aufruf werden erstellt.
+		\item Die Filter werden gesetzt.
+		\item Die erwarteten Daten werden erstellt.
+	\end{itemize} \\
+	\hline
+	\textbf{Ablauf}    				& 
+	\begin{enumerate}
+		\item Die Datenbank-Abfrage wird durchgeführt.
+		\item Die erhaltenen Daten werden überprüft mit den bereits erstellten Daten.
+	\end{enumerate} \\
+	\hline
+	\textbf{Erwartetes Ergebnis}    & Es gibt keine Unterschiede zwischen den gefilterten Daten aus der Datenbank und den erwarteten Daten. \\
+	\hline
+\end{longtable}\label{tab:testfall-M6}
+
+\begin{longtable}{p{.3\textwidth}|p{.65\textwidth}}
+	\hline
+	\textbf{Testfall}               & \textbf{M7} \\
+	\hline
+	\textbf{Beschreibung}   		& Generieren der SQL-Query für einen Filter \\
+	\hline
+	\textbf{Art}    				& Unit-Test \\
+	\hline
+	\textbf{Vorbedingungen}    		& Das Backend läuft. \\
+	\hline
+	\textbf{Konfiguration}   	 	& 
+	\begin{itemize}
+		\item Der Filter wird gesetzt.
+		\item Das erwartete Ergebnis wird erstellt.
+	\end{itemize} \\
+	\hline
+	\textbf{Ablauf}    				& 
+	\begin{enumerate}
+		\item Die Funktion wird aufgerufen.
+		\item Die erhaltene SQL-Query wird überprüft.
+	\end{enumerate} \\
+	\hline
+	\textbf{Erwartetes Ergebnis}    & Die erhaltene SQL-Query stimmt mit dem erwarteten Ergebnis überein. \\
+	\hline
+\end{longtable}\label{tab:testfall-M7}
+
+\begin{longtable}{p{.3\textwidth}|p{.65\textwidth}}
+	\hline
+	\textbf{Testfall}               & \textbf{M8} \\
+	\hline
+	\textbf{Beschreibung}   		& Generieren der SQL-Query für mehrere Filter \\
+	\hline
+	\textbf{Art}    				& Unit-Test \\
+	\hline
+	\textbf{Vorbedingungen}    		& Das Backend läuft. \\
+	\hline
+	\textbf{Konfiguration}   	 	& 
+	\begin{itemize}
+		\item Die Filter werden gesetzt.
+		\item Das erwartete Ergebnis wird erstellt.
+	\end{itemize} \\
+	\hline
+	\textbf{Ablauf}    				& 
+	\begin{enumerate}
+		\item Die Funktion wird aufgerufen.
+		\item Die erhaltene SQL-Query wird überprüft.
+	\end{enumerate} \\
+	\hline
+	\textbf{Erwartetes Ergebnis}    & Die erhaltene SQL-Query stimmt mit dem erwarteten Ergebnis überein. \\
+	\hline
+\end{longtable}\label{tab:testfall-M8}
 
 \newpage

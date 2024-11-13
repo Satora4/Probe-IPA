@@ -229,33 +229,66 @@
 \@writefile{toc}{\contentsline {subsection}{\numberline {10.6.2}Automatisierte Tests}{49}{subsection.10.6.2}\protected@file@percent }
 \@writefile{toc}{\contentsline {section}{\numberline {10.7}Manuelle Tests}{49}{section.10.7}\protected@file@percent }
 \@input{teil_2/testkonzepte.aux}
-\@writefile{toc}{\contentsline {chapter}{\numberline {11}Entscheiden}{52}{chapter.11}\protected@file@percent }
+\@writefile{toc}{\contentsline {chapter}{\numberline {11}Entscheiden}{54}{chapter.11}\protected@file@percent }
 \@writefile{lof}{\addvspace {10\p@ }}
 \@writefile{lot}{\addvspace {10\p@ }}
-\newlabel{ch:entscheiden}{{11}{52}{Entscheiden}{chapter.11}{}}
-\@writefile{toc}{\contentsline {chapter}{\numberline {12}Realisieren}{53}{chapter.12}\protected@file@percent }
+\newlabel{ch:entscheiden}{{11}{54}{Entscheiden}{chapter.11}{}}
+\@writefile{toc}{\contentsline {section}{\numberline {11.1}Filterung der Daten auf dem Server}{54}{section.11.1}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {11.1.1}Vorteile}{54}{subsection.11.1.1}\protected@file@percent }
+\@writefile{toc}{\contentsline {paragraph}{Flexibilität und Anpassbarkeit}{54}{subsection.11.1.1}\protected@file@percent }
+\@writefile{toc}{\contentsline {paragraph}{Unabhängigkeit von der Datenbank}{54}{subsection.11.1.1}\protected@file@percent }
+\@writefile{toc}{\contentsline {paragraph}{Mehr Kontrolle über die Logik}{54}{subsection.11.1.1}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {11.1.2}Nachteile}{54}{subsection.11.1.2}\protected@file@percent }
+\@writefile{toc}{\contentsline {paragraph}{Leistungsprobleme bei vielen Daten}{54}{subsection.11.1.2}\protected@file@percent }
+\@writefile{toc}{\contentsline {paragraph}{Langsamere Antwortzeiten}{54}{subsection.11.1.2}\protected@file@percent }
+\@writefile{toc}{\contentsline {paragraph}{Zusätzliche Verarbeitungsschritte}{54}{subsection.11.1.2}\protected@file@percent }
+\@writefile{toc}{\contentsline {section}{\numberline {11.2}Filterung der Daten auf der Datenbank}{55}{section.11.2}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {11.2.1}Vorteile}{55}{subsection.11.2.1}\protected@file@percent }
+\@writefile{toc}{\contentsline {paragraph}{Effizienteres Filtering}{55}{subsection.11.2.1}\protected@file@percent }
+\@writefile{toc}{\contentsline {paragraph}{Reduzierter Speicherbedarf im Bankend}{55}{subsection.11.2.1}\protected@file@percent }
+\@writefile{toc}{\contentsline {paragraph}{Minimierung der Datenübertragung}{55}{subsection.11.2.1}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {11.2.2}Nachteile}{55}{subsection.11.2.2}\protected@file@percent }
+\@writefile{toc}{\contentsline {paragraph}{Komplexität von Abfragen}{55}{subsection.11.2.2}\protected@file@percent }
+\@writefile{toc}{\contentsline {paragraph}{SQL-Kenntnisse erforderlich}{55}{subsection.11.2.2}\protected@file@percent }
+\@writefile{toc}{\contentsline {paragraph}{Datenbankbelastung}{55}{subsection.11.2.2}\protected@file@percent }
+\@writefile{toc}{\contentsline {section}{\numberline {11.3}Entscheidung}{55}{section.11.3}\protected@file@percent }
+\@writefile{toc}{\contentsline {chapter}{\numberline {12}Realisieren}{56}{chapter.12}\protected@file@percent }
 \@writefile{lof}{\addvspace {10\p@ }}
 \@writefile{lot}{\addvspace {10\p@ }}
-\newlabel{ch:realisieren}{{12}{53}{Realisieren}{chapter.12}{}}
-\@writefile{toc}{\contentsline {chapter}{\numberline {13}Kontrollieren}{54}{chapter.13}\protected@file@percent }
+\newlabel{ch:realisieren}{{12}{56}{Realisieren}{chapter.12}{}}
+\@writefile{toc}{\contentsline {section}{\numberline {12.1}Endpoints für die Mindestanforderungen erstellen}{56}{section.12.1}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {12.1.1}MqInDTO}{56}{subsection.12.1.1}\protected@file@percent }
+\@writefile{toc}{\contentsline {paragraph}{@Data}{56}{subsection.12.1.1}\protected@file@percent }
+\@writefile{toc}{\contentsline {paragraph}{@SuperBuilder}{56}{subsection.12.1.1}\protected@file@percent }
+\@writefile{toc}{\contentsline {paragraph}{@NoArgsConstructor}{56}{subsection.12.1.1}\protected@file@percent }
+\@writefile{toc}{\contentsline {paragraph}{@Schema}{56}{subsection.12.1.1}\protected@file@percent }
+\@writefile{toc}{\contentsline {paragraph}{@NotNull}{56}{subsection.12.1.1}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {12.1.2}MqInMapper}{57}{subsection.12.1.2}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {12.1.3}MqInService}{57}{subsection.12.1.3}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {12.1.4}MqInServiceImpl}{57}{subsection.12.1.4}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {12.1.5}MqTableDao}{57}{subsection.12.1.5}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {12.1.6}MqTableHibernateDao}{58}{subsection.12.1.6}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {12.1.7}MqInResource}{58}{subsection.12.1.7}\protected@file@percent }
+\@writefile{toc}{\contentsline {paragraph}{@GetMapping}{58}{subsection.12.1.7}\protected@file@percent }
+\@writefile{toc}{\contentsline {chapter}{\numberline {13}Kontrollieren}{59}{chapter.13}\protected@file@percent }
 \@writefile{lof}{\addvspace {10\p@ }}
 \@writefile{lot}{\addvspace {10\p@ }}
-\newlabel{ch:kontrollieren}{{13}{54}{Kontrollieren}{chapter.13}{}}
-\@writefile{toc}{\contentsline {chapter}{\numberline {14}Auswerten}{55}{chapter.14}\protected@file@percent }
+\newlabel{ch:kontrollieren}{{13}{59}{Kontrollieren}{chapter.13}{}}
+\@writefile{toc}{\contentsline {chapter}{\numberline {14}Auswerten}{60}{chapter.14}\protected@file@percent }
 \@writefile{lof}{\addvspace {10\p@ }}
 \@writefile{lot}{\addvspace {10\p@ }}
-\newlabel{ch:auswerten}{{14}{55}{Auswerten}{chapter.14}{}}
+\newlabel{ch:auswerten}{{14}{60}{Auswerten}{chapter.14}{}}
 \abx@aux@cite{0}{ergonlogo}
 \abx@aux@segm{0}{0}{ergonlogo}
-\@writefile{toc}{\contentsline {chapter}{Glossar}{56}{section*.9}\protected@file@percent }
-\@writefile{toc}{\contentsline {chapter}{Abbildungsverzeichnis}{56}{section*.11}\protected@file@percent }
-\@writefile{toc}{\contentsline {chapter}{Quellenverzeichnis}{57}{chapter*.12}\protected@file@percent }
-\abx@aux@page{3}{57}
-\abx@aux@page{4}{57}
-\newlabel{LastPage}{{14}{57}{Auswerten}{page.57}{}}
-\gdef\lastpage@lastpage{57}
-\gdef\lastpage@lastpageHy{57}
+\@writefile{toc}{\contentsline {chapter}{Glossar}{61}{section*.9}\protected@file@percent }
+\@writefile{toc}{\contentsline {chapter}{Abbildungsverzeichnis}{61}{section*.11}\protected@file@percent }
+\@writefile{toc}{\contentsline {chapter}{Quellenverzeichnis}{62}{chapter*.12}\protected@file@percent }
+\abx@aux@page{3}{62}
+\abx@aux@page{4}{62}
+\newlabel{LastPage}{{14}{62}{Auswerten}{page.62}{}}
+\gdef\lastpage@lastpage{62}
+\gdef\lastpage@lastpageHy{62}
 \abx@aux@read@bbl@mdfivesum{4A2A094AB534F6A82D8BFA033A10016C}
 \abx@aux@defaultrefcontext{0}{ict}{nyt/global//global/global/global}
 \abx@aux@defaultrefcontext{0}{ergonlogo}{nyt/global//global/global/global}
-\gdef \@abspage@last{58}
+\gdef \@abspage@last{63}
