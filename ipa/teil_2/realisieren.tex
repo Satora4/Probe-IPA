@@ -26,15 +26,15 @@ Zwei Funktionen namens toMqInDto() und listToMqInDto() wurden in dieser Klasse e
 \end{verbatim}
 
 \subsection{MqInService}
-Um die Struktur von eine Service vorzugeben, wurde ein Interface mit dem Namen MqInService erstellt. Dieses Interface wird später für die Klasse MqInServiceImpl.java und MqInServiceMockImpl.java verwendet und beinhaltet im Moment eine Funktion für das hervorholen von allen MqTables in der Datenbank.
+Um die Struktur von eine Service vorzugeben, wurde ein Interface mit dem Namen MqInService erstellt. Dieses Interface wird später für die Klasse MqInServiceImpl.java und MqInServiceMockImpl.java verwendet und beinhaltet im Moment zwei Funktionen für das hervorholen von allen MqTables in der Datenbank und das ausführen von einem neuen Verarbeitungsversuch.
 
 \subsection{MqInServiceImpl}
-MqInServiceImpl wird vom Interface MqInService implementiert. Sie wird mit der Annotation @Service für Springboot als Service deklariert. Die Klasse enthält die vom Interface vorgegebene Funktion getMqTables(). Sie ruft eine Funktion von der Klasse MqTableDao (die ursprüngliche MqInDao-Klasse) auf die alle MqTable Einträge mit dem Status «Error» von der Datenbank hervorholt und sie auf 25 Einträge limitiert.
+MqInServiceImpl wird vom Interface MqInService implementiert. Sie wird mit der Annotation @Service für Springboot als Service deklariert. Die Klasse enthält die vom Interface vorgegebene Funktion getMqTables(). Sie ruft eine Funktion von der Klasse MqTableDao (die ursprüngliche MqInDao-Klasse) auf die alle MqTable Einträge mit dem Status «Error» von der Datenbank hervorholt und sie auf 25 Einträge limitiert. Ein ändlicher Vorgehen hat die Funktion executeNewProcessingAttempt() die den Status vom MqIn auf NEW setzt.  
 
 In dieser Klasse wurde auch ein Konstruktor erstellt. Bei dieser Implementierung trat ein Problem auf welches die Applikation nicht starten lies. Bei dem Parameter MqTableDao erschien die Meldung «Could not autowire. No beans of 'MqTableDao' type found.». Das Problem war, dass für die Klasse MqTableDao noch kein Bean erstellt wurde, obwohl die Klasse schon vorher existierte. Das Bean wurde anschliessend in der Klasse WebBackendAdminSpringConfiguration.java erstellt.
 
 \subsection{MqTableDao}
-Diese Klasse existierte bereits und war ursprünglich als MqInDao geplant. Durch das musste nur eine Funktion hinzugefügt werden. Da es ein Interface ist, wurde nur der Name und die benötigten Parameter hinzugefügt. Ausserdem wurde ein Kommentar für diese Funktion erstellt. Der Kommentar beinhaltet eine kurze Beschreibung der Funktion und was sie zurückgibt. Mithilfe dieses Kommentars kann man jetzt über die Funktion drüberfahren und die Beschreibung wird als kurze Erklärung angezeigt.
+Diese Klasse existierte bereits und war ursprünglich als MqInDao geplant. Durch das mussten nur die Funktionen hinzugefügt werden. Da es ein Interface ist, wurden nur die Namen und die benötigten Parameter hinzugefügt. Es wurden noch keine Bodys implementiert. Ausserdem wurden bei beiden Funktionen ein Kommentar erstellt. Der Kommentar beinhaltet eine kurze Beschreibung der Funktion und was sie zurückgibt. Mithilfe dieses Kommentars kann man jetzt über die Funktion drüberfahren und die Beschreibung wird als kurze Erklärung angezeigt.
 
 \subsection{MqTableHibernateDao}
 In der Klasse MqTableHibernateDao wird das Interface MqTableDao implementiert und muss durch das auch die neu erstellte Funktion implementieren.
@@ -61,12 +61,79 @@ Um die Einträge auf 25 zu limitieren, musste noch die Klasse TypedQuery verwend
 	}
 \end{verbatim}
 
+\noindent Für die zweite Funktion wurde ein CriteriaUpdateBuilder verwendet. Die restliche Implementation blieb fast gleich. Die Limitierung wurde entfernt und ein set() hinzugefügt, um den MQ\_IN\_STATUS auf NEW zu setzten.
+
 \subsection{MqInResource}
-Die Klasse MqInresource beinhaltet den geplanten Endpoint welcher im Arbeitspaket \ref{tab:realisieren-4.1} beschrieben wurde. Die Klasse wurde mit @RestController annotiert, sodass Spring weiss das diese Klasse Endpoints enthält. Der Endpoint selbst hat drei Annotationen:
+Die Klasse MqInresource beinhaltet den geplanten Endpoint welcher im Arbeitspaket \ref{tab:realisieren-4.1} beschrieben wurde. Die Klasse wurde mit @RestController annotiert, sodass Spring weiss das diese Klasse Endpoints enthält. Sie hat ausserdem noch @RequestMapping, um den Pfad zu definieren und @RequiredArgsConstructor, welcher en Konstruktor generiert mit allen finalen und nicht-null Feldern.
+
+Der Endpoint selbst hat drei Annotationen:
 
 \paragraph{@GetMapping} \footnote{\url{https://www.geeksforgeeks.org/spring-postmapping-and-getmapping-annotation/}} deklariert diesen Endpoint als ein GET-Request.
 \paragraph{@Operation} \footnote{\url{https://www.baeldung.com/swagger-operation-vs-apiresponse}} beschreibt die Funktion von diesem Endpoint.
-\paragraph{@RequirePermission} \footnote{Vom Projekt CardX implementiert} stellt die Befugnis von diesem Endpoint ein.
+\paragraph{@RequirePermission} \footnote{Vom Projekt CardX implementiert} stellt die Befugnis von diesem Endpoint ein. \newline
+
+\noindent Der Endpoint selbst greift nur auf die erstellte Funktion in der Klasse MqInService.java zu und Mapped das erhaltene Resultat mithilfe des Mappers bevor er es wieder zurück sendet.
+
+Der zweite Endpoint für das aussführen von einem weiteren Verarbeitungsversuch ist gleich aufgebaut wie der erste mit zwei Unterschieden. Er hat zwei andere Annotationen. Einerseits wurde der @GetMapping mit einem @RequestMapping ersetzt, sodass Spring weiss, dass es die Requests zu den richtigen Endpoints verweisen kann. Ausserdem hat dieser Endpoint ein Parameter namens id. Dieser Parameter wird vom RequestBody befüllt und muss deshalb mit @RequestBody annotiert werden.
+
+\section{Die Seite und Tabelle im Frontend erstellen}
+
+\subsection{Erstellung der Tabelle}\label{ch:creation-of-table}
+Für die Erstellung der Tabelle wurde eine mq-in.service.ts-Klasse erstellt. Diese wird für die Requests an das Backend verwendet und beinhaltet die Funktion getAllMqInsLimitedTo25(), um alle MqIns von der Datenbank zu laden, und executeNewProcessingAttempt(id: number), die für die erneute Ausführung von einem Verarbeitungsveruch zuständig ist. Beide Funktionen rufen ihren erstellten Endpoint auf, welcher für das Frontend vom Projekt generiert wurde.
+
+Diese Generierung kann mithilfe der Annotationen bei den entsprechenden Endpoints die HTTP-Requests generieren. Durch die generierte Swagger Datei wird eine zweite JSON-Datei generiert, die alle genötigten Informationen beinhaltet und im Modul Interface als web-backend-admin-api-.json gespeichert wird. Ein Plugin im Frontend nutzt anschliessend diese Datei, um die HTTP-Requests zu generieren.
+
+Die Generierung vereinfachte die Nutzung von HTTP-Requests und hat die entsprechende Implementierung beschleunigt. Die Tabelle für die MqIns wurde durch das schnell erstellt und die ersten Einträge waren sichtbar auf der Seite.
+
+\begin{figure}[H]
+	\begin{center}
+		\includegraphics[width=1\textwidth]{ressourcen/4.2_Tabelle}
+		\caption[Aktueller Stand der Tabelle]{Aktueller Stand der Tabelle}\label{fig:4.2-tabelle}
+	\end{center}
+\end{figure}
+
+\subsection{Anzeigen der ganzen Nachricht}
+Für das Anzeigen der ganzen Nachricht wurde eine neue Map erstellt, welche als Key die ID des MqIns und als Value einen Boolean enthält. Diese Map wird immer beim Aufruf der Seite gefüllt, nach dem die MqIns geladen wurden. Durch diese Map kann die ganze Nachricht angezeigt und anschliessend wieder verkürzt werden. Die eine Funktion setzt den entsprechenden Wert jedes Mal um, wenn man auf den Knopf «ganze Nachricht anzeigen» oder «Nachricht kürzen» drückt.
+
+\noindent Die kurze Nachricht wird angezeigt:
+\begin{figure}[H]
+	\begin{center}
+		\includegraphics[width=1\textwidth]{ressourcen/Kurze-Nachricht}
+		\caption[Gekürzte Nachricht]{Gekürzte Nachricht}\label{fig:show-shortend-version-of-message}
+	\end{center}
+\end{figure}
+
+\noindent Die ganze Nachricht wird angezeigt:
+\begin{figure}[H]
+	\begin{center}
+		\includegraphics[width=1\textwidth]{ressourcen/Ganze-Nachricht}
+		\caption[Ganze Nachricht]{Ganze Nachricht}\label{fig:show-hole-message}
+	\end{center}
+\end{figure}
+
+\subsection{Erneutes Ausführen vom Verarbeitungsversuch}
+Die Implementation für dieses Feature dauerte nicht lange, da, wie oben beschrieben \ref{ch:creation-of-table}, die HTTP-Requests generiert wurden und die Funktion nur noch verknüpft werden musste beim Drücken des Knopfs «neuer Verarbeitungsversuch starten». Dies war schnell gemacht und kostete nur im Backend ein wenig Zeit.
+
+\begin{verbatim}
+	private executeNewProcessingAttempt(id: number) {
+		this.mqInService.executeNewProcessingAttempt(id)
+		.subscribe({
+			next: () => {
+				this.loadMqIns();
+			},
+			error: (e: HttpErrorResponse) => {
+				throw new ApiHttpErrorResponse('Die Verarbeitung der Queue konnte nicht neu gestartet werden.', e);
+			},
+		});
+	}
+\end{verbatim}
+
+\noindent Diese Funktion ruft die Funktion executeNewProcessingAttempt() mit dem Parameter ID auf. Anschliessend führt die Subscribe folgende zwei Aktionen aus:
+
+\paragraph{next:} wird ausgeführt, wenn der HTTP-Request erfolgreich war und die erwarteten Daten bereitgestellt wurden. In diesem Fall wird die Liste neu geladen.
+\paragraph{error:} wird ausgeführt, wenn der HTTP-Request nicht erfolgreich war und ein Fehler während der Ausführung auftritt. Hier wird ein Fehler mit einer Nachricht geworfen.\newline
+
+\noindent Danach ist die Backend-Anfrage fertig und war entweder erfolgreich oder nicht.
 
 
 \newpage

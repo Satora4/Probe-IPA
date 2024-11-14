@@ -139,8 +139,16 @@
 \contentsline {subsection}{\numberline {12.1.6}MqTableHibernateDao}{58}{subsection.12.1.6}%
 \contentsline {subsection}{\numberline {12.1.7}MqInResource}{58}{subsection.12.1.7}%
 \contentsline {paragraph}{@GetMapping}{58}{subsection.12.1.7}%
-\contentsline {chapter}{\numberline {13}Kontrollieren}{59}{chapter.13}%
-\contentsline {chapter}{\numberline {14}Auswerten}{60}{chapter.14}%
-\contentsline {chapter}{Glossar}{61}{section*.9}%
-\contentsline {chapter}{Abbildungsverzeichnis}{61}{section*.11}%
-\contentsline {chapter}{Quellenverzeichnis}{62}{chapter*.12}%
+\contentsline {paragraph}{@Operation}{59}{subsection.12.1.7}%
+\contentsline {paragraph}{@RequirePermission}{59}{subsection.12.1.7}%
+\contentsline {section}{\numberline {12.2}Die Seite und Tabelle im Frontend erstellen}{59}{section.12.2}%
+\contentsline {subsection}{\numberline {12.2.1}Erstellung der Tabelle}{59}{subsection.12.2.1}%
+\contentsline {subsection}{\numberline {12.2.2}Anzeigen der ganzen Nachricht}{60}{subsection.12.2.2}%
+\contentsline {subsection}{\numberline {12.2.3}Erneutes Ausführen vom Verarbeitungsversuch}{60}{subsection.12.2.3}%
+\contentsline {paragraph}{next:}{61}{subsection.12.2.3}%
+\contentsline {paragraph}{error:}{61}{subsection.12.2.3}%
+\contentsline {chapter}{\numberline {13}Kontrollieren}{62}{chapter.13}%
+\contentsline {chapter}{\numberline {14}Auswerten}{63}{chapter.14}%
+\contentsline {chapter}{Glossar}{64}{section*.12}%
+\contentsline {chapter}{Abbildungsverzeichnis}{64}{section*.14}%
+\contentsline {chapter}{Quellenverzeichnis}{65}{chapter*.15}%
