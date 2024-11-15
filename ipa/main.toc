@@ -147,8 +147,16 @@
 \contentsline {subsection}{\numberline {12.2.3}Erneutes Ausführen vom Verarbeitungsversuch}{60}{subsection.12.2.3}%
 \contentsline {paragraph}{next:}{61}{subsection.12.2.3}%
 \contentsline {paragraph}{error:}{61}{subsection.12.2.3}%
-\contentsline {chapter}{\numberline {13}Kontrollieren}{62}{chapter.13}%
-\contentsline {chapter}{\numberline {14}Auswerten}{63}{chapter.14}%
-\contentsline {chapter}{Glossar}{64}{section*.12}%
-\contentsline {chapter}{Abbildungsverzeichnis}{64}{section*.14}%
-\contentsline {chapter}{Quellenverzeichnis}{65}{chapter*.15}%
+\contentsline {section}{\numberline {12.3}Endpoints für die Erweiterung Filter erstellen}{61}{section.12.3}%
+\contentsline {subsection}{\numberline {12.3.1}MqInFilterDto}{61}{subsection.12.3.1}%
+\contentsline {subsection}{\numberline {12.3.2}MqInService}{61}{subsection.12.3.2}%
+\contentsline {subsection}{\numberline {12.3.3}MqInServiceImpl}{62}{subsection.12.3.3}%
+\contentsline {subsection}{\numberline {12.3.4}MqTableDao}{62}{subsection.12.3.4}%
+\contentsline {subsection}{\numberline {12.3.5}MqTableHibernateDao}{62}{subsection.12.3.5}%
+\contentsline {section}{\numberline {12.4}Die Erweiterung in die Tabelle integrieren}{63}{section.12.4}%
+\contentsline {section}{\numberline {12.5}ReleaseNotes schreiben}{64}{section.12.5}%
+\contentsline {chapter}{\numberline {13}Kontrollieren}{65}{chapter.13}%
+\contentsline {chapter}{\numberline {14}Auswerten}{66}{chapter.14}%
+\contentsline {chapter}{Glossar}{67}{section*.13}%
+\contentsline {chapter}{Abbildungsverzeichnis}{67}{section*.15}%
+\contentsline {chapter}{Quellenverzeichnis}{68}{chapter*.16}%

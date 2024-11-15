@@ -135,5 +135,88 @@ Die Implementation für dieses Feature dauerte nicht lange, da, wie oben beschri
 
 \noindent Danach ist die Backend-Anfrage fertig und war entweder erfolgreich oder nicht.
 
+\section{Endpoints für die Erweiterung Filter erstellen}
+Die Reihenfolge, welche für diesen Abschnitt folgt, ist die Reihenfolge in der Implementiert wurde. Die Klassen werden nicht mehr im Detail beschrieben, was oben bereits erklärt wurde.
 
+\subsection{MqInFilterDto}
+Um die Datensätze der Datenbank zu filtern, wurde ein weiteres DTO erstellt, um die Filterkriterien vom Frontend zu empfangen. Die Klasse beinhaltet vier Variablen namens status, messageQuery, timestampFrom und timestampTo. Ausserdem sind alle Variablen noch mit der Annotation @Schema beschrieben.
+
+\subsection{MqInService}
+Im Interface MqInService wurde wieder eine neue Funktion, getFilteredMqTablePCs(), hinzugefügt. Sie nimmt einen Parameter mit dem Typ MqInFilterQuery, dieser Record wurde in der Klasse MqTableDao hinzugefügt und wird später nochmals genauer erklärt, und gibt eine Liste mit MqTablePCs zurück.
+
+\subsection{MqInServiceImpl}
+Die Implementierung der neu erstellten Funktion im Interface MqInService wurde hier implementiert. Die Funktion hat gerade mal eine Zeile Code, die im Interface MqTableDao eine weitere Funktion aufruft.
+
+\subsection{MqTableDao}
+Das Interface hat zwei neue Inhalte dazu bekommen.
+
+Einerseits wurde die neue Funktion getFilteredMqTablePCs() deklariert. Sie hat den gleichen Parameter und Rückgabewert wie die Funktion im Interface MqInService.
+
+Und andererseits wurde hier ein neuer Record namens MqTableFilterQuery hinzugefügt. Ein Record ist eine speziele Art von Klasse, die hauptsächlich für datenzentrierte Klassen dient. Die Klasse ist dadurch einfach und prägnant, da sie Funktionen wie Konstruktoren, Getter, toStirng, hashCode oder equals bereits implementiert und sie so nicht erneut geschrieben werden müssen. Die Felder der Klasse werden duch Parameter angegeben. Dieser Record beinhaltet status, messageQuery, timestampFrom und timestampTo als Parameter.
+
+\subsection{MqTableHibernateDao}
+Die zuvor deklarierte Funktion getFilteredMqTablePCs() wird hier implementiert. Sie hat ähnliche Variablen wie die anderen Funktionen in dieser Klasse, wie CriteriaBuilder, CriteriaQuery und Root. Was bei dieser Funktion speziel ist, sie hat eine weitere Variable mit dem Typ Predicate. Diese Variable ermöglicht es, eine Liste von Filtern zu erstellen. Da nicht immer alle Filter gesetzt werden, müssten ansonsten mehrere Funktionen erstellt werden. Mit dieser Variable kann man die gesetzten Filter zu der Liste hinzufügen und am Ende die Elemente zu der SQL-Query hinzugefügt werden. Dies hat es also ermöglicht, alle Filter mit einer Funktion zu setzen und so das richtige Resultat zu erhalten.
+
+\begin{verbatim}
+	@Override
+	public List<MqTablePC> getFilteredMqTablePCs(MqTableFilterQuery filterQuery) {
+		CriteriaBuilder cb = getSession().getCriteriaBuilder();
+		CriteriaQuery<MqTablePC> query = cb.createQuery(MqTablePC.class);
+		Root<MqTablePC> mqTable = query.from(MqTablePC.class);
+		List<Predicate> predicates = new ArrayList<>();
+		
+		Optional.ofNullable(filterQuery.status()) // Einfügen der Filters status
+		.ifPresent(status ->
+		predicates.add(cb.equal(mqTable.get(FN_MQ_IN_STATUS), status))
+		);
+		
+		Optional.ofNullable(filterQuery.messageQuery()) // Einfügen der Filters messageQuery
+		.ifPresent(messageQueue -> {
+			String searchTerm = "%" + filterQuery.messageQuery().toLowerCase(Locale.getDefault()) + "%";
+			predicates.add(
+			cb.or(
+			cb.like(cb.lower(mqTable.get(FN_MESSAGE_SHORT).as(String.class)), searchTerm),
+			cb.like(cb.lower(mqTable.get(FN_MESSAGE_LONG).as(String.class)), searchTerm)
+			)
+			);
+		});
+		
+		Optional.ofNullable(filterQuery.timestampFrom()) // Einfügen der Filters timestampFrom
+		.ifPresent(timestampFrom ->
+		predicates.add(cb.greaterThanOrEqualTo(mqTable.get(FN_MODIFIED_AT), timestampFrom))
+		);
+		
+		Optional.ofNullable(filterQuery.timestampTo()) // Einfügen der Filters timestampTo
+		.ifPresent(timestampTo ->
+		predicates.add(cb.lessThanOrEqualTo(mqTable.get(FN_MODIFIED_AT), timestampTo))
+		);
+		
+		
+		query.select(mqTable)
+		.where(cb.and(predicates.toArray(Predicate[]::new)))
+		.orderBy(cb.desc(mqTable.get(FN_MODIFIED_AT)));
+		
+		return getSession().createQuery(query)
+		.setMaxResults(25)
+		.getResultList();
+	}
+\end{verbatim}
+
+\section{Die Erweiterung in die Tabelle integrieren}
+Durch die grosse Verzögerung während dem implementieren von diesem Teil hat sich der Teilnehmer dazu entschieden die Erweiterung zu pausieren und zuerst mit den restlichen Arbeitspaketen weiter zu mache. Falls am Ende der Probe-IPA noch Zeit übrig ist, wird die Implementierung fortgesetzt.
+
+\begin{figure}[H]
+	\begin{center}
+		\includegraphics[width=1\textwidth]{ressourcen/Filterung}
+		\caption[Der aktuelle Stand des Filters]{Der aktuelle Stand des Filters}\label{fig:filtering-v1}
+	\end{center}
+\end{figure}
+
+\section{ReleaseNotes schreiben}
+Um die Änderungen in den Master mergen zu können muss man ReleaseNotes für das implementierte Jira-Ticket schreiben. Für dieses Ticket wurden folgende ReleaseNotes geschrieben:
+
+\begin{verbatim}
+	## Webinterface
+	* CARDXDEV-2268 Neue Seite unter Business Daten > Queue Messages (eingehend) hinzugefügt mit einer MqIn-Tabelle.
+\end{verbatim}
 \newpage
