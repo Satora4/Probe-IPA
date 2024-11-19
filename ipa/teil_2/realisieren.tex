@@ -203,7 +203,42 @@ Die zuvor deklarierte Funktion getFilteredMqTablePCs() wird hier implementiert. 
 \end{verbatim}
 
 \section{Die Erweiterung in die Tabelle integrieren}
-Durch die grosse Verzögerung während dem implementieren von diesem Teil hat sich der Teilnehmer dazu entschieden die Erweiterung zu pausieren und zuerst mit den restlichen Arbeitspaketen weiter zu mache. Falls am Ende der Probe-IPA noch Zeit übrig ist, wird die Implementierung fortgesetzt.
+Durch die grosse Verzögerung während dem implementieren von diesem Teil hat sich der Lernende dazu entschieden die Erweiterung zu pausieren und zuerst mit den restlichen Arbeitspaketen weiter zu mache. Falls am Ende der Probe-IPA noch Zeit übrig ist, wird die Implementierung fortgesetzt. 
+
+Die Reihenfolge, welche für diesen Abschnitt folgt, ist die Reihenfolge in der Implementiert wurde.
+
+\subsection{mq-in-filter-url}
+Um die Parameter von der Url für da Filtern zu extrahieren wurde in dieser Klasse eine Funktion getMqInFilterUrlStateFromParams erstellt. Diese Funktion nimmt eine Mapü mit den Parametern. Mit dieser Map wird mithilfe vom Enum MqInFilterUrlKeys alle Werte von der Url hervorgeholt und anschliessend alle Werte, die nichts beinhalten, aus der Liste entfernt. Als Rückgabewert wird MqInFilterUrlState verwendet.
+
+Dieser Typ beinhaltet Keys mit dem Typ MqInFilterUrlKeys und die Werte haben einen Typ String. Dies wird mit einem Record definiert. Durch das hinzufügen des Typs Partial werden die Werte optional und müssen nicht befüllt werden.
+
+\begin{verbatim}
+	export enum MqInFilterUrlKeys {
+		STATUS = 'status',
+		MESSAGE_QUEUE = 'messageQuery',
+		TIMESTAMP_FROM = 'timestampFrom',
+		TIMESTAMP_TO = 'timestampTo',
+	}
+	
+	export type MqInFilterUrlState = Partial<Record<MqInFilterUrlKeys, string>>;
+	
+	export function getMqInFilterUrlStateFromParams(params: ParamMap): MqInFilterUrlState {
+		const result: MqInFilterUrlState = Object.values(MqInFilterUrlKeys)
+		.reduce((state, urlParam) => ({ ...state, [urlParam]: params.get(urlParam) }), {});
+		return omitBy(result, isEmpty);
+	}
+\end{verbatim}
+
+Anschliessend wurde noch ein mapping für den Typ FilterQueryDto erstellt für die Backend-Anfrage.
+
+\subsection{mq-in-filter.component}
+Diese Klasse wird für das anzeigen der Filter verwendet. Es wurde ein FormGroup erstellt mit den Filter-Werten, die anfangs einfach Null sind. Der Status jedoch hat den Wert ERROR um den Mindestanforderungen gerecht zu werden, da sie bei der ersten Abfrage nur Elemente mit diesem Wert wollen. Dies wird durch ein ngOnInit() gemacht, da diese Funktion immer als erstes aufgerufen wird, wenn man die Seite aufruft.
+
+Um die Werte von der Url in das Formular einzufügen wurde eine weitere Funktion erstellt, die alle Parameter mit der Hilfe von der zuvor erstellten Funktion getMqInFilterUrlStateFromParams(). Sie speichert die erhaltenen Parameter in einer Variable und setzt anschliessend die FormGroup mit den erhaltenen Werten.
+
+Um eine Filterung durchzuführen werden beim Event submit alle Werte des Filters im Typ MqInFilterUrlState gespeichert und anschliessend für die Elternkomponente bereit gestellt durch ein Event.
+
+Das Endresultat der Implementierten Funktionen und Klassen sieht anschliessend im Web-GUI so aus:
 
 \begin{figure}[H]
 	\begin{center}
@@ -212,11 +247,15 @@ Durch die grosse Verzögerung während dem implementieren von diesem Teil hat si
 	\end{center}
 \end{figure}
 
+\subsection{Fehlerbeschreibung}
+Durch eine Fehler welcher nicht ermittelt werden konnte, wurde die Erweiterung pausiert. Der Fehler erscheint anfangs beim aufrufen der Seite und hat den HTTP-Statuscode 500, was auf einen Server interner Fehler hinweist. Es wurde nicht herrausgefunden was der Fehler war. Mit Debugging wurde versucht den Request im Backend abzufangen und manuell durch die Funktionen zu gehen, aber der Request kam nicht im Backend an. Nach ein paar Stunden Debugging und Fehlersuche wurde entschieden, dass die Implementation der Erweiterung pausiert wird und zu einem späteren Zeitpunkt erneut einen Versucht zu starten mit einem Fachverantwortlichen.
+
 \section{ReleaseNotes schreiben}
 Um die Änderungen in den Master mergen zu können muss man ReleaseNotes für das implementierte Jira-Ticket schreiben. Für dieses Ticket wurden folgende ReleaseNotes geschrieben:
 
 \begin{verbatim}
 	## Webinterface
-	* CARDXDEV-2268 Neue Seite unter Business Daten > Queue Messages (eingehend) hinzugefügt mit einer MqIn-Tabelle.
+	* CARDXDEV-2268 Neue Seite unter Business Daten > Queue Messages (eingehend)
+	  hinzugefügt mit einer MqIn-Tabelle.
 \end{verbatim}
 \newpage
