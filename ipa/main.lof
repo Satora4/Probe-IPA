@@ -1,27 +1,28 @@
 \contentsline {figure}{\numberline {1}{\ignorespaces Logo der Ergon Informatik AG~\blx@tocontentsinit {0}\parencite {ergonlogo}}}{1}{figure.caption.1}%
 \babel@toc {ngerman}{}\relax 
 \addvspace {10\p@ }
-\contentsline {figure}{\numberline {1.1}{\ignorespaces Anzeigen und bearbeiten der Tasks}}{7}{figure.caption.2}%
+\contentsline {figure}{\numberline {1.1}{\ignorespaces Anzeigen und bearbeiten der Tasks}}{8}{figure.caption.2}%
 \addvspace {10\p@ }
 \addvspace {10\p@ }
 \addvspace {10\p@ }
-\contentsline {figure}{\numberline {4.1}{\ignorespaces Arbeitsplatz des Lernenden}}{10}{figure.caption.3}%
+\contentsline {figure}{\numberline {4.1}{\ignorespaces Arbeitsplatz des Lernenden}}{11}{figure.caption.3}%
 \addvspace {10\p@ }
-\contentsline {figure}{\numberline {5.1}{\ignorespaces Git Commit History des Quellcodes}}{13}{figure.caption.4}%
-\contentsline {figure}{\numberline {5.2}{\ignorespaces Git Commit History der Dokumentation}}{14}{figure.caption.5}%
-\addvspace {10\p@ }
-\addvspace {10\p@ }
+\contentsline {figure}{\numberline {5.1}{\ignorespaces Git Commit History des Quellcodes}}{14}{figure.caption.4}%
+\contentsline {figure}{\numberline {5.2}{\ignorespaces Git Commit History der Dokumentation}}{15}{figure.caption.5}%
 \addvspace {10\p@ }
 \addvspace {10\p@ }
-\contentsline {figure}{\numberline {9.1}{\ignorespaces Ablauf eines GET-Requests für das Erstellen der Tabelle}}{31}{figure.caption.6}%
-\addvspace {10\p@ }
-\contentsline {figure}{\numberline {10.1}{\ignorespaces Klassendiagramm für das Backend}}{44}{figure.caption.7}%
-\contentsline {figure}{\numberline {10.2}{\ignorespaces Ablauf eines Filter-Request}}{48}{figure.caption.8}%
 \addvspace {10\p@ }
 \addvspace {10\p@ }
-\contentsline {figure}{\numberline {12.1}{\ignorespaces Aktueller Stand der Tabelle}}{60}{figure.caption.9}%
-\contentsline {figure}{\numberline {12.2}{\ignorespaces Gekürzte Nachricht}}{60}{figure.caption.10}%
-\contentsline {figure}{\numberline {12.3}{\ignorespaces Ganze Nachricht}}{60}{figure.caption.11}%
-\contentsline {figure}{\numberline {12.4}{\ignorespaces Der aktuelle Stand des Filters}}{64}{figure.caption.12}%
+\contentsline {figure}{\numberline {9.1}{\ignorespaces Ablauf eines GET-Requests für das Erstellen der Tabelle}}{32}{figure.caption.6}%
 \addvspace {10\p@ }
+\contentsline {figure}{\numberline {10.1}{\ignorespaces Klassendiagramm für das Backend}}{45}{figure.caption.7}%
+\contentsline {figure}{\numberline {10.2}{\ignorespaces Ablauf eines Filter-Request}}{49}{figure.caption.8}%
+\addvspace {10\p@ }
+\addvspace {10\p@ }
+\contentsline {figure}{\numberline {12.1}{\ignorespaces Aktueller Stand der Tabelle}}{61}{figure.caption.9}%
+\contentsline {figure}{\numberline {12.2}{\ignorespaces Gekürzte Nachricht}}{61}{figure.caption.10}%
+\contentsline {figure}{\numberline {12.3}{\ignorespaces Ganze Nachricht}}{61}{figure.caption.11}%
+\contentsline {figure}{\numberline {12.4}{\ignorespaces Der aktuelle Stand des Filters}}{65}{figure.caption.12}%
+\addvspace {10\p@ }
+\contentsline {figure}{\numberline {13.1}{\ignorespaces Jenkins Codequalität}}{71}{figure.caption.13}%
 \addvspace {10\p@ }
