@@ -19,7 +19,7 @@
 
 \refsection{0}
   \datalist[entry]{nyt/global//global/global/global}
-    \entry{ict}{ook}{}{}
+    \entry{ict}{url}{}{}
       \name{author}{1}{}{%
         {{un=0,uniquepart=base,hash=b478ebcdb605fdd450fbf207700e34f2}{%
            family={Bern},

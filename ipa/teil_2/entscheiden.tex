@@ -4,7 +4,7 @@ Dieses Kapitel zeigt die in der IPERKA-Phase «Entscheiden» durchgeführten Arb
 \section{Filterung der Daten auf dem Server}
 
 \subsection{Vorteile}
-\paragraph{Flexibilität und Anpassbarkeit} Die Filterlogik kann leicht im Backend angepasst werden bei Bedarf, ohne dass möglicherweise Änderungen an der Datenbank erforderlich sind.
+\paragraph{Flexibilität und Anpassbarkeit} Die Filterlogik kann leicht im Backend angepasst werden, ohne dass möglicherweise Änderungen an der Datenbank erforderlich sind.
 \paragraph{Unabhängigkeit von der Datenbank} Durch das Filtern der Daten ausserhalb der Datenbank ist man nicht von Funktionen oder Einschränkungen abhängig und kann bei jeder Datenbankart durchgeführt werden.
 \paragraph{Mehr Kontrolle über die Logik} Im Backend können zusätzliche Filterlogiken implementiert werden, die in SQL nur schwer oder ineffizient umgesetzt werden können.
 
@@ -17,7 +17,7 @@ Dieses Kapitel zeigt die in der IPERKA-Phase «Entscheiden» durchgeführten Arb
 
 \subsection{Vorteile}
 \paragraph{Effizienteres Filtering} Da Datenbanken optimiert für Filteroperationen sind, werden nur relevante Daten an das Backend übertragen, was Zeit und die Netzwerklast reduziert.
-\paragraph{Reduzierter Speicherbedarf im Bankend} Durch dass das die Daten direkt in der Datenbank gefiltert werden, muss das Backend weniger Arbeitsspeicher verwenden.
+\paragraph{Reduzierter Speicherbedarf im Bankend} Durch dass die Daten direkt in der Datenbank gefiltert werden, muss das Backend weniger Arbeitsspeicher verwenden.
 \paragraph{Minimierung der Datenübertragung} Bei vielen Daten oder langsamen Netzwerkverbindungen kann die Übertragung von gefilterten Daten die Performance erhöhen.
 
 \subsection{Nachteile}
@@ -26,5 +26,5 @@ Dieses Kapitel zeigt die in der IPERKA-Phase «Entscheiden» durchgeführten Arb
 \paragraph{Datenbankbelastung} Bei vielen komplexen Filteroperationen oder Abfragen gleichzeitig kann das die Datenbank zusätzlich belasten und die Antwortzeit verlängern.
 
 \section{Entscheidung}
-Die Variante mit dem Filtern im Backend hat einige Vorteile wir die Unabhängigkeit von der Datenbank, wodurch man flexibler arbeiten kann. Jedoch ist in den Akzeptanzkriterien die Performance wichtig. Die Datenbank ist für das Filtern von Daten optimiert und ist so im Vorteil. Da die Daten auf 25 Einträge limitiert sein werden, trifft auch der Nachteil von zu grossen Datenmengen nicht in kraft. Die Filteroperationen sind auch nicht zu komplex und die Performance wird durch das nicht beeinträchtigt. Für die Implementierung wird in diesem Fall die Datenbankebene gewählt.
+Die Variante mit dem Filtern im Backend hat einige Vorteile, wie die Unabhängigkeit von der Datenbank, wodurch man flexibler arbeiten kann. Jedoch ist in den Akzeptanzkriterien die Performance wichtig. Die Datenbank ist für das Filtern von Daten optimiert und ist so im Vorteil. Da die Daten auf 25 Einträge limitiert sein werden, trifft auch der Nachteil von zu grossen Datenmengen nicht in Kraft. Die Filteroperationen sind auch nicht zu komplex, und die Performance wird durch das nicht beeinträchtigt. Für die Implementierung wird in diesem Fall die Datenbankebene gewählt.
 \newpage

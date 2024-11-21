@@ -4,25 +4,26 @@
 \contentsline {figure}{\numberline {1.1}{\ignorespaces Anzeigen und bearbeiten der Tasks}}{8}{figure.caption.2}%
 \addvspace {10\p@ }
 \addvspace {10\p@ }
+\contentsline {figure}{\numberline {3.1}{\ignorespaces Arbeitsplatz des Lernenden}}{10}{figure.caption.3}%
 \addvspace {10\p@ }
-\contentsline {figure}{\numberline {4.1}{\ignorespaces Arbeitsplatz des Lernenden}}{11}{figure.caption.3}%
-\addvspace {10\p@ }
-\contentsline {figure}{\numberline {5.1}{\ignorespaces Git Commit History des Quellcodes}}{14}{figure.caption.4}%
-\contentsline {figure}{\numberline {5.2}{\ignorespaces Git Commit History der Dokumentation}}{15}{figure.caption.5}%
-\addvspace {10\p@ }
+\contentsline {figure}{\numberline {4.1}{\ignorespaces Git Commit History des Quellcodes}}{13}{figure.caption.4}%
+\contentsline {figure}{\numberline {4.2}{\ignorespaces Git Commit History der Dokumentation}}{14}{figure.caption.5}%
 \addvspace {10\p@ }
 \addvspace {10\p@ }
-\addvspace {10\p@ }
-\contentsline {figure}{\numberline {9.1}{\ignorespaces Ablauf eines GET-Requests für das Erstellen der Tabelle}}{32}{figure.caption.6}%
-\addvspace {10\p@ }
-\contentsline {figure}{\numberline {10.1}{\ignorespaces Klassendiagramm für das Backend}}{45}{figure.caption.7}%
-\contentsline {figure}{\numberline {10.2}{\ignorespaces Ablauf eines Filter-Request}}{49}{figure.caption.8}%
+\contentsline {figure}{\numberline {6.1}{\ignorespaces Zeitplan}}{17}{figure.caption.6}%
 \addvspace {10\p@ }
 \addvspace {10\p@ }
-\contentsline {figure}{\numberline {12.1}{\ignorespaces Aktueller Stand der Tabelle}}{61}{figure.caption.9}%
-\contentsline {figure}{\numberline {12.2}{\ignorespaces Gekürzte Nachricht}}{61}{figure.caption.10}%
-\contentsline {figure}{\numberline {12.3}{\ignorespaces Ganze Nachricht}}{61}{figure.caption.11}%
-\contentsline {figure}{\numberline {12.4}{\ignorespaces Der aktuelle Stand des Filters}}{65}{figure.caption.12}%
 \addvspace {10\p@ }
-\contentsline {figure}{\numberline {13.1}{\ignorespaces Jenkins Codequalität}}{71}{figure.caption.13}%
+\contentsline {figure}{\numberline {9.1}{\ignorespaces Ablauf eines GET-Requests für das Erstellen der Tabelle}}{32}{figure.caption.7}%
+\addvspace {10\p@ }
+\contentsline {figure}{\numberline {10.1}{\ignorespaces Klassendiagramm für das Backend}}{45}{figure.caption.8}%
+\contentsline {figure}{\numberline {10.2}{\ignorespaces Ablauf eines Filter-Request}}{49}{figure.caption.9}%
+\addvspace {10\p@ }
+\addvspace {10\p@ }
+\contentsline {figure}{\numberline {12.1}{\ignorespaces Aktueller Stand der Tabelle}}{61}{figure.caption.10}%
+\contentsline {figure}{\numberline {12.2}{\ignorespaces Gekürzte Nachricht}}{61}{figure.caption.11}%
+\contentsline {figure}{\numberline {12.3}{\ignorespaces Ganze Nachricht}}{61}{figure.caption.12}%
+\contentsline {figure}{\numberline {12.4}{\ignorespaces Der aktuelle Stand des Filters}}{66}{figure.caption.13}%
+\addvspace {10\p@ }
+\contentsline {figure}{\numberline {13.1}{\ignorespaces Codequalität Verlauf}}{71}{figure.caption.14}%
 \addvspace {10\p@ }

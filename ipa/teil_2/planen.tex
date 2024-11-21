@@ -2,23 +2,24 @@
 Dieses Kapitel zeigt die in der IPERKA-Phase «Planen» durchgeführten Arbeiten auf. In dieser Phase werden basierend auf den Anforderungen Arbeitspakete definiert und in einem Zeitplan auf die zehn Probe-IPA Tage aufgeteilt. Zudem werden Lösungskonzepte für die Umsetzung der Seite Business Daten erarbeitet und ein Testkonzept erstellt.
 
 \section{Arbeitspakete}
-Die gesamte Arbeit der Probe-IPA wird in Arbeitspakete aufgeteilt. Die Arbeitspakete bestehen aus einer zugehörigen Nummer, einem Namen, dem geschätzten Aufwand und ein erwartetes Ergebnis. In den geschätzten Aufwand sind Zeitreservern mit einberechnet, sodass unvorhergesehenes kompensiert werden kann. Da der Zeitplan in 2-Stunden-Blöcke aufgeteilt ist, wird der geringste Aufwand 2 Stunden sein und im zweier Takt nach oben gehen.
+Die gesamte Arbeit der Probe-IPA wird in Arbeitspakete aufgeteilt. Die Arbeitspakete bestehen aus einer zugehörigen Nummer, einem Namen, dem geschätzten Aufwand und einem erwarteten Ergebnis. In dem geschätzten Aufwand sind Zeitreserven mit einberechnet, sodass unvorhergesehenes kompensiert werden kann. Da der Zeitplan in 2-Stunden-Blöcke aufgeteilt ist, wird der geringste Aufwand 2 Stunden sein und im zweier Takt nach oben gehen.
 
-Die Arbeitspakete sind nach der Projektmanagementmethode IPERKA gegliedert. Probe-IPA-spezifische Arbeiten, wie die Expertenbesuche oder das Erstellen des Anhangs, die ausserhalb der eigentlichen Projekts stehen, werden unter «Rahmenaufgaben» aufgeführt.
+Die Arbeitspakete sind nach der Projektmanagementmethode IPERKA gegliedert. Probe-IPA-spezifische Arbeiten, wie die Expertenbesuche oder das Erstellen des Anhangs, die ausserhalb des eigentlichen Projekts stehen, werden unter «Rahmenaufgaben» aufgeführt.
 \include{teil_2/arbeitspakete}
 
 \section{Lösungskonzept für die Struktur vom Backend}
-In diesem Abschnitt wir das Lösungskonzept vom Backend für einen Teil der unter \ref{ch:minimalanforderungen} definierten Anforderungen beschrieben.
+In diesem Abschnitt wird das Lösungskonzept vom Backend für einen Teil der unter \ref{ch:minimalanforderungen} definierten Anforderungen beschrieben.
 
 \subsection{Erstellung der Endpunkte}
-Im Backend existieren noch keine Endpunkte für die Message-Queues, um sie im Frontend darzustellen. Deshalb müssen diese neu implementiert werden. Die Endpoints werden in einer Resource-Klasse erstellt und rufen Funktionen von einer Service-Klasse auf. Die Service-Klasse wird von einem Interface implementiert und die Standardfunktionen, wie «getAll» oder «update», sind so bereits im Interface definiert und müssen nur noch in der Service-Klasse implementiert werden. Der Grund für das Interface ist, dass es für die Service-Klasse und die Mock-Service-Klasse genutzt werden kann und beide Klassen die gleichen Funktionen haben, aber mit einer unterschiedlichen Implementierung.
-Der Zugriff auf die Datenbank erfolgt in einer DAO-Klasse. In dieser Klasse werden mithilfe von Funktionen die Daten von der Datenbank hervorgeholt und bereitgestellt. Diese Funktionen können anschliessend von der Service-Klasse aufgerufen und werden von einem DAO-Ojekt zu einem DTO-Objekt gemappt, um die Daten in ein passendes Objekt zu füllen, welches anschliessend wieder an das Frontend gesendet wird.
+Im Backend existieren noch keine Endpunkte für die Message-Queues, um sie im Frontend darzustellen. Deshalb müssen diese neu implementiert werden. Die Endpoints werden in einer Ressource-Klasse erstellt und rufen Funktionen von einer Service-Klasse auf. Die Service-Klasse wird von einem Interface implementiert und die Standardfunktionen, wie «getAll» oder «update», sind so bereits im Interface definiert und müssen nur noch in der Service-Klasse implementiert werden. Der Grund für das Interface ist, dass es für die Service-Klasse und die Mock-Service-Klasse genutzt werden kann und beide Klassen die gleichen Funktionen haben, aber mit einer unterschiedlichen Implementierung.
+
+Der Zugriff auf die Datenbank erfolgt in einer DAO-Klasse. In dieser Klasse werden mithilfe von Funktionen die Daten aus der Datenbank hervorgeholt und bereitgestellt. Diese Funktionen werden anschliessend von der Service-Klasse aufgerufen und werden von einem DAO-Objekt zu einem DTO-Objekt gemappt, um die Daten in ein passendes Objekt zu füllen, welches anschliessend wieder an das Frontend gesendet wird.
 
 \subsubsection{DAO-Klassen}
-Eine DAO-Klasse (Data Access Object) wird verwendet um die CRUD-Operationen (Create, Read, Update, Delete) bereitzustellen, die benötigt werden, um Daten zu verwalten. Sie abstrahiert die Verbindung zur Datenbank, sodass der Code ausserhalb der DAO-Klasse unabhängig von der Datenzugriffstechnologie, in diesem Fall Hibernate, bleibt.
+Eine DAO-Klasse (Data Access Object) wird verwendet, um die CRUD-Operationen (Create, Read, Update, Delete) bereitzustellen, die benötigt werden, um Daten zu verwalten. Sie abstrahiert die Verbindung zur Datenbank, sodass der Code ausserhalb der DAO-Klasse unabhängig von der Datenzugriffstechnologie, in diesem Fall Hibernate, bleibt.
 
 \subsubsection{Klassendiagramm für das Backend}
-Hier wird ein Klassendiagramm dargestellt, mit den verschiedenen Klassen und Beziehungen, um das Verständnis der Erstellung der Endpunkte zu vereinfachen. Diese Version muss nicht der Implementierung entsprechen. Es kann sein das während der Implementierung Veränderungen auftreten die nicht in diesem Diagramm dargestellt werden.
+Hier wird ein Klassendiagramm dargestellt, mit den verschiedenen Klassen und Beziehungen, um das Verständnis der Erstellung der Endpunkte zu vereinfachen. Diese Version muss nicht der Implementierung entsprechen. Es kann sein, dass während der Implementierung Veränderungen auftreten, die nicht in diesem Diagramm dargestellt werden.
 
 \begin{figure}[H]
 	\begin{center}
@@ -27,48 +28,49 @@ Hier wird ein Klassendiagramm dargestellt, mit den verschiedenen Klassen und Bez
 	\end{center}
 \end{figure}
 
-\noindent Der Klassenname ist immer oben in der Box in Bold geschrieben. Die Verbindungen zeigen an was passiert, wenn ein Endpoint aufgerufen wird. Bei den Interfaces und den dazugehörigen Implementationen, ist jeweils nur das Interface beschrieben. Die gestrichelten Verbindungen deuten darauf hin, dass sie diese Klasse implementieren oder sie gebrauch von einer Funktion in der entsprechenden Klasse machen.
+\noindent Der Klassenname ist immer oben in der Box in Bold geschrieben. Die Verbindungen zeigen an, was passiert, wenn ein Endpoint aufgerufen wird. Bei den Interfaces und den dazugehörigen Implementationen ist jeweils nur das Interface beschrieben. Die gestrichelten Verbindungen deuten darauf hin, dass sie diese Klasse implementieren oder sie Gebrauch von einer Funktion in der entsprechenden Klasse machen.
 
 \subsection{Verwendete Technologien}
-Um dieses Konzept umzusetzen werden folgende Technologien verwendet:
+Um dieses Konzept umzusetzen, werden folgende Technologien verwendet:
+
 \paragraph{Java} ist eine bekannte Programmiersprache und wird in diesem Projekt genutzt, um das Backend zu implementieren.
-\paragraph{Hibernate} ist ein Framework für objekt-relationale Abbildung (ORM) ind java, welcher ermöglicht , Java-Objekte direkt mit relationalen Datenbanken zu verknüpfen.
+\paragraph{Hibernate} Hibernate ist ein Framework für Objekt-relationale Abbildung (ORM) in Java, welches ermöglicht, Java-Objekte direkt mit relationalen Datenbanken zu verknüpfen.
 \paragraph{Springboot} ist ein Java-Framework, das auf dem Spring-Framework basiert. Es wurde entwickelt, um die Konfiguration und den Aufbau von Anwendungen zu beschleunigen, indem es automatisierte Konfigurationen und eingebettete Server bietet.
 
 \section{Lösungskonzept für die Struktur vom Frontend}
-In diesem Abschnitt wir das Lösungskonzept vom Frontende für einen Teil der unter \ref{ch:minimalanforderungen} definierten Anforderungen beschrieben.
+In diesem Abschnitt wird das Lösungskonzept vom Frontende für einen Teil der unter \ref{ch:minimalanforderungen} definierten Anforderungen beschrieben.
 
 \subsection{Bestehende Implementationen}
-Im Frontend besteht bereits vieles. Ein Menü muss nicht mehr erstellt werden. Die Seite kann von anderen Implementationen kopiert werden und passend zu den Minimalanforderungen gemacht werden. Die Darstellung einer Tabelle im Frontend existiert bereits und muss dadurch nicht erneut implementiert werden. Die Tabelle muss jedoch noch angepasst werden, um die richtigen Spalten anzuzeigen. Durch die bereits existierende Darstellung wird die Tabelle stimmig in das UI eingebaut und wird in etwa gleich aussehen wie die anderen Tabellen im Web-GUI.
+Im Frontend besteht bereits vieles. Ein Menü muss nicht mehr erstellt werden. Die Seite kann von anderen Implementierungen kopiert und passend zu den Minimalanforderungen gemacht werden. Die Darstellung einer Tabelle im Frontend existiert bereits und muss dadurch nicht erneut implementiert werden. Die Tabelle muss jedoch noch angepasst werden, um die richtigen Spalten anzuzeigen. Durch die bereits existierende Darstellung wird die Tabelle stimmig in das UI eingebaut und wird in etwa gleich aussehen wie die anderen Tabellen im Web-GUI.
 
 \subsection{Neue Implementationen}
 Für das Anzeigen der gesamten Nachricht in der Spalte MESSAGE\_SHORT / \_LONG wird ein Knopf im Kontextmenü verwendet. Wenn die gesamte Nachricht angezeigt wird, wird dieser Knopf durch einen anderen ersetzt, welcher die Nachricht wieder auf 50 Zeichen begrenzt.
 
-Ausserdem beinhaltet das Kontextmenü einen weiteren Knopf um bei einem Eintrag einen neuen Verarbeitungsversuch auszulösen. Dieser Knopf wird bei Einträgen, die bereits an einem Verarbeitungsversuch sind, deaktiviert oder ausgeblendet. Dieser Knopf löst einen Request in das Backend aus, um der neue Verarbeitungssversuch in der Datenbank zu speichern und ihn auszulösen.
+Ausserdem beinhaltet das Kontextmenü einen weiteren Knopf, um bei einem Eintrag einen neuen Verarbeitungsversuch auszulösen. Dieser Knopf wird bei Einträgen, die bereits in einem Verarbeitungsversuch sind, deaktiviert oder ausgeblendet. Dieser Knopf löst einen Request in das Backend aus, um den neuen Verarbeitungsversuch in der Datenbank zu speichern und ihn auszulösen.
 
 \subsection{Verwendete Technologien}
-Um dieses Konzept umzusetzen werden folgende Technologien verwendet:
+Um dieses Konzept umzusetzen, werden folgende Technologien verwendet:
 
-\paragraph{TypeScript} ist eine Programmiersprache die verwendet wird um die Funktionalitäten für die Tabelle zu implementieren, wie zum Beispiel werden die Requests, an das Backend, mit TypeScript geschrieben.
-\paragraph{Angular} ist ein Framework für Single Page Applications (SPAs), bei denen Inhalte dynamisch nachgeladen werden können, ohne dass die Seite neu geladen werden muss. Ausserdem eignet es sich gut um moderne, skalierbare und performante Webanwendungen zu erstellen.
-\paragraph{HTML} (HyperText Markup Language) wird verwendet um die Struktur und den Inhalt vom Webdokument zu beschreiben. HTML verwendet sogenannte «Tags» die es ermöglichen Text, Bilder und unter anderem auch Tabellen auf der Webseite anzuzeigen.
-\paragraph{CSS} (Cascading Style Sheets) ist eine Stylesheet-Sprache, die da Design und Layout von HTML-Dukumenten festlegt.
+\paragraph{TypeScript} ist eine Programmiersprache, die verwendet wird, um die Funktionalitäten für die Tabelle zu implementieren, wie zum Beispiel werden die Requests, an das Backend, mit TypeScript geschrieben.
+\paragraph{Angular} ist ein Framework für Single Page Applications (SPAs), bei denen Inhalte dynamisch nachgeladen werden können, ohne dass die Seite neu geladen werden muss. Ausserdem eignet es sich gut, um moderne, skalierbare und performante Webanwendungen zu erstellen.
+\paragraph{HTML} (HyperText Markup Language) wird verwendet, um die Struktur und den Inhalt des Webdokuments zu beschreiben. HTML verwendet sogenannte «Tags», die es ermöglichen, Text, Bilder und unter anderem auch Tabellen auf der Webseite anzuzeigen.
+\paragraph{CSS} (Cascading Style Sheets) ist eine Stylesheet-Sprache, die das Design und Layout von HTML-Dokumenten festlegt.
 
 \section{Entscheidung der Erweiterung}
-Dieser Absatz erklärt den Grund warum sich der Lernende für eine Erweiterung entschieden hat.
+Dieser Absatz erklärt den Grund, warum sich der Lernende für eine Erweiterung entschieden hat.
 
 \subsection{Pagination}
 Pagination ist etwas Neues für den Lernenden. Er hat es schon öfters gesehen auf anderen Webseiten, hat sich aber noch nie mit der Implementierung auseinandergesetzt. Das Wechseln zwischen mehreren Blättern ermöglicht einen klaren Überblick über die Seite, da die Tabelle durch die Aufteilung eine begrenzte Anzahl Elemente enthält und die Seite durch das nicht überfüllt wirkt. Die Implementierung existiert bereits bei anderen Tabellen und wäre daher nicht allzu schwer, um sie in die Seite einzubauen.
 
 \subsection{Filter}
-Die Implementation für den Filter ist einfacher zu verstehen weil, es Filter auf fast jeder Webseite gibt. ob versteckt oder sichtbar, kann man sich gut vorstellen wie das im Hintergrund ablaufen kann. Es gibt mehr Anforderungen für die Erweiterung Filter, aber sie sind einfacher als die bei dem Paginator. Es gibt nur drei Filter-Kriterien und bei mehreren aktiven Filter werden sie mit einem «UND» verknüpft.
+Die Implementierung für den Filter ist einfacher zu verstehen, weil es Filter auf fast jeder Webseite gibt. Ob versteckt oder sichtbar, kann man sich gut vorstellen, wie das im Hintergrund ablaufen kann. Es gibt mehr Anforderungen für die Erweiterung Filter, aber sie sind einfacher als die bei dem Paginator. Es gibt nur drei Filter-Kriterien, und bei mehreren aktiven Filtern werden sie mit einem «UND» verknüpft.
 
 \subsection{Entscheid}
-Die Anforderungen von Pagination sind zwar weniger, aber da sich der Lernende noch nie mit Pagination auseinandergesetzt hat erschwert es ihm die Implementation und es könnten Fehler auftreten die viel Zeit kosten. Da die Probe-IPA aber nur 10 Tage zu Verfügung stellt und die Erweiterung Filter schneller gehen könnte, kann der Lernende anschliessend mehr Zeit in die Dokumentation von der Erweiterung investieren, um am Ende ein fertiges Produkt zu präsentieren.
+Die Anforderungen von Pagination sind zwar weniger, aber da sich der Lernende noch nie mit Pagination auseinandergesetzt hat, erschwert es ihm die Implementation und es könnten Fehler auftreten, die viel Zeit kosten. Da die Probe-IPA aber nur 10 Tage zur Verfügung stellt und die Erweiterung Filter schneller gehen könnte, kann der Lernende anschliessend mehr Zeit in die Dokumentation der Erweiterung investieren, um am Ende ein fertiges Produkt zu präsentieren.
 \paragraph{Ausgewählte Erweiterung:} Filter
 
 \section{Lösungskonzept für die Struktur vom Filter}
-In diesem Abschnitt wir das Lösungskonzept von der Erweiterung Filter der unter \ref{ch:erweiterung-filter} definierten Anforderungen beschrieben.
+In diesem Abschnitt wird das Lösungskonzept der Erweiterung Filter der unter \ref{ch:erweiterung-filter} definierten Anforderungen beschrieben.
 
 \subsection{Bestehende Implementation}
 Im Web-GUI existiert bereits ein Filter unter «Business Daten» → «Fehlgeschlagene Zahlungen». Dieser Filter beinhaltet, wie auch bei der Erweiterung gefordert, einen «Datum von / Datum bis» Filter, welcher kopiert und angepasst werden kann. Für den neuen Endpoint kann auch der bestehende als Beispiel verwendet werden, um die Implementierung zu erleichtern.
@@ -90,7 +92,7 @@ Für diesen Filter wird eine Auswahlliste erstellt mit der folgenden Auswahl:
 \paragraph{PROCESSED} Die Nachricht wurde erfolgreich bearbeitet.
 \paragraph{OUTDATED} Die Nachricht war veraltet, was bedeutet, dass der Job bereits eine neuere Nachricht bearbeitet hat. (z. B. eine Nachricht mit einer höheren Sequenz-Nummer)\newline
 
-\noindent Der ausgewählte Status wird ins Backend geschickt. Die Funktion von diesem Endpoint, welcher den Request bekommt, besteht daraus einen Anfrage an die Datenbank zu machen. Die Filterung, wie in den Anforderungen \ref{ch:erweiterung-filter} beschrieben, passiert darauf hin direkt auf der Datenbank um die Performance so wenig wie möglich zu beeinflussen. Würde die Filterung im Backend geschehen, würde das die Performance ein wenig beeinflussen, weshalb es gleich auf der Datenbank gemacht wird. Dies gilt auch für die beiden anderen Filter.
+\noindent Der ausgewählte Status wird ins Backend geschickt. Die Funktion von diesem Endpoint, welcher den Request bekommt, besteht daraus, eine Anfrage an die Datenbank zu machen. Die Filterung, wie in den Anforderungen \ref{ch:erweiterung-filter} beschrieben, passiert darauf hin direkt auf der Datenbank, um die Performance so wenig wie möglich zu beeinflussen. Würde die Filterung im Backend geschehen, kann das die Performance ein wenig beeinflussen, weshalb es gleich auf der Datenbank gemacht wird. Dies gilt auch für die beiden anderen Filter.
 
 \subsection{Begriffe im Nachrichten Inhalt Filtern}
 Dieser Filter wird mithilfe von einem Textfeld erstellt. In dieses Textfeld können Begriffe hineingeschrieben und durch einen Knopf gefiltert werden. Hier wird auch wieder ein Request an das Backend gesendet, um den Nachrichteninhalt von den Elementen in der Datenbank-Tabelle MQ\_TABLE nach diesen Begriffen zu filtern und anschliessend das Ergebnis wieder zurückzusenden an das Frontend.
@@ -107,23 +109,23 @@ In diesem Diagramm wird der Ablauf von einem Filter-Request an das Backend darge
 
 Folgende Schritte werden im Sequenzdiagramm durchgeführt.
 \begin{enumerate}
-	\item Im Frontend wird durch das auswählen eines Filters einen Request an das Backend gesendet.
-	\item Im Backend wird dieser Request angenommen und es wird geprüft welcher Filter genutzt werden sollte.
-	\item Im Fallen vom einem Filter wird nichts gross angepasst und eine Anfrage an die Datenbank wird gemacht.
-	\item Falls zwei Filter ausgewählt werden, wird eine SQL-Query generiert die ein AND zwischen beiden Filtern beinhaltet um nach beidem gleichzeitig zu Filtern. Anschliessend wird eine Anfrage an die Datenbank gemacht.
-	\item Bei allen drei Filter wird, ähnlich wie bei zwei Filter, ein AND zwischen allen drei Filter hinzugefügt und eine Anfrage an das Backend gemacht.
-	\item Das erhaltene Resultat von der Datenbank wird dann gemapped und zurück an das Frontend gesendet.
+	\item Im Frontend wird durch das Auswählen eines Filters ein Request an das Backend gesendet.
+	\item Im Backend wird dieser Request angenommen und es wird geprüft, welcher Filter genutzt werden sollte.
+	\item Im Fallen von einem Filter wird nichts gross angepasst und eine Anfrage an die Datenbank wird gemacht.
+	\item Falls zwei Filter ausgewählt werden, wird eine SQL-Query generiert, die ein AND zwischen beiden Filtern beinhaltet, um nach beidem gleichzeitig zu filtern. Anschliessend wird eine Anfrage an die Datenbank gemacht.
+	\item Bei allen drei Filtern wird, ähnlich wie bei zwei Filtern, ein AND zwischen den dreien hinzugefügt und eine Anfrage an das Backend gemacht.
+	\item Das erhaltene Resultat von der Datenbank wird dann gemappt und zurück an das Frontend gesendet.
 \end{enumerate}
 
 \section{Testkonzept}
 Um sicherzustellen, dass die Funktionalität der Implementation fehlerfrei funktioniert und alle Anforderungen richtig eingebunden wurden, wird ein Testkonzept erstellt. Darin befindet sich eine kleine Beschreibung, die Art des Tests, die Vorbedingungen, eine Konfiguration, der Ablauf und das erwartete Resultat.
 
 \subsection{Benötigte Testmittel}
-Um die Tests zu implementieren werden verschiedene Tools und Technologien verwendet. Diese werden hier aufgeführt:
+Um die Tests zu implementieren, werden verschiedene Tools und Technologien verwendet. Diese werden hier aufgeführt:
 
-\paragraph{IntelliJ (IDE)} \footnote{\url{https://www.jetbrains.com/de-de/idea/}} ist die Entwicklungsumgebung in der die Tests geschrieben werden.
+\paragraph{IntelliJ (IDE)} \footnote{\url{https://www.jetbrains.com/de-de/idea/}} ist die Entwicklungsumgebung, in der die Tests geschrieben werden.
 \paragraph{Postman} \footnote{\url{https://www.postman.com/}} wird für das manuelle Testen von den Endpointen verwendet.
-\paragraph{Mockito} \footnote{\url{https://site.mockito.org/}} wird für das Mocken von Objekten und Klassen verwendet. Mocking ersetzt Objekte und Klassen durch simulierte Versionen um das erwartete Verhalten nachzuahmen.
+\paragraph{Mockito} \footnote{\url{https://site.mockito.org/}} wird für das Mocken von Objekten und Klassen verwendet. Mocking ersetzt Objekte und Klassen durch simulierte Versionen, um das erwartete Verhalten nachzuahmen.
 
 \subsection{Automatisierte Tests}
 Automatisierte Tests werden nur für die Funktionen im Backend geschrieben. Dies aus dem Grund, weil im Projekt CardX keine Frontend-Tests existieren und diese Implementationen gleich aufgebaut sein sollen wie die anderen Implementationen im Frontend. Sie werden mithilfe von Unit- und Integration-Tests implementiert.

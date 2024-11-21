@@ -1,5 +1,5 @@
 \section{Testfälle}
-Alle Automatischen Tests werden auf 25 Einträge limitiert. Sie haben alle den Fehlerzustand MQ\_IN\_STATUS und sind absteigend sortiert nach MODIFIED\_AT. Die erhaltenen Einträge beinhalten nur die Spalten die vorgegeben sind.
+Alle automatischen Tests werden auf 25 Einträge limitiert. Sie haben alle den Fehlerzustand MQ\_IN\_STATUS und sind absteigend sortiert nach MODIFIED\_AT. Die erhaltenen Einträge beinhalten nur die Spalten, die vorgegeben sind.
 
 \subsection{Testfälle der Mindestanforderungen}
 
@@ -22,7 +22,7 @@ Alle Automatischen Tests werden auf 25 Einträge limitiert. Sie haben alle den F
 	\textbf{Ablauf}    				& 
 	\begin{enumerate}
 		\item Die Datenbank-Abfrage wird durchgeführt.
-		\item Die erhaltenen Daten werden überprüft mit den bereits erstellten Daten.
+		\item Die erhaltenen Daten werden mit den bereits erstellten Daten überprüft.
 	\end{enumerate} \\
 	\hline
 	\textbf{Erwartetes Ergebnis}    & Es gibt keine Unterschiede zwischen den Daten aus der Datenbank und den erwarteten Daten.  \\
@@ -33,7 +33,7 @@ Alle Automatischen Tests werden auf 25 Einträge limitiert. Sie haben alle den F
 	\hline
 	\textbf{Testfall}               & \textbf{M2} \\
 	\hline
-	\textbf{Beschreibung}   		& Datenbank-Abfrage findet keine passende Abfrage. \\
+	\textbf{Beschreibung}   		& Neuer Verarbeitungsversuch starten \\
 	\hline
 	\textbf{Art}    				& Integration-Test \\
 	\hline
@@ -41,47 +41,22 @@ Alle Automatischen Tests werden auf 25 Einträge limitiert. Sie haben alle den F
 	\hline
 	\textbf{Konfiguration}   	 	& 
 	\begin{itemize}
-		\item Der erwartete Fehlerzustand wird erstellt.
+		\item Die Daten für den Aufruf werden erstellt.
 	\end{itemize} \\
 	\hline
 	\textbf{Ablauf}    				& 
 	\begin{enumerate}
 		\item Die Datenbank-Abfrage wird durchgeführt.
-		\item Der Code kann mit dem Sonderfall umgehen und schreibt eine Fehlernachricht.
+		\item Die erhaltenen Daten werden überprüft.
 	\end{enumerate} \\
 	\hline
-	\textbf{Erwartetes Ergebnis}    & Das Programm wirft keinen Fehler und sendet stattdessen eine Fehlernachricht. \\
+	\textbf{Erwartetes Ergebnis}    & Ein Objekt auf der Datenbank wurde überschrieben. Das überschriebene Objekt hat einen Status von NEW.  \\
 	\hline
 \end{longtable}\label{tab:testfall-M2}
 
 \begin{longtable}{p{.3\textwidth}|p{.65\textwidth}}
 	\hline
 	\textbf{Testfall}               & \textbf{M3} \\
-	\hline
-	\textbf{Beschreibung}   		& Datenbank ist nicht erreichbar. \\
-	\hline
-	\textbf{Art}    				& Integration-Test \\
-	\hline
-	\textbf{Vorbedingungen}    		& Das Backend läuft un die Datenbank existiert nicht. \\
-	\hline
-	\textbf{Konfiguration}   	 	& 
-	\begin{itemize}
-		\item Der erwartete Fehlerzustand wird erstellt.
-	\end{itemize} \\
-	\hline
-	\textbf{Ablauf}    				& 
-	\begin{enumerate}
-		\item Die Datenbank-Abfrage wird durchgeführt.
-		\item Der Code kann mit dem Sonderfall umgehen und schreibt eine Fehlernachricht.
-	\end{enumerate} \\
-	\hline
-	\textbf{Erwartetes Ergebnis}    & Das Programm wirft keinen Fehler und sendet stattdessen eine Fehlernachricht. \\
-	\hline
-\end{longtable}\label{tab:testfall-M3}
-
-\begin{longtable}{p{.3\textwidth}|p{.65\textwidth}}
-	\hline
-	\textbf{Testfall}               & \textbf{M4} \\
 	\hline
 	\textbf{Beschreibung}   		& Mapping von DAO zu DTO \\
 	\hline
@@ -92,18 +67,43 @@ Alle Automatischen Tests werden auf 25 Einträge limitiert. Sie haben alle den F
 	\textbf{Konfiguration}   	 	& 
 	\begin{itemize}
 		\item Ein DAO-Objekt ist erstellt und gefüllt mit Daten.
-		\item Ein DTO-Objekt ist erstellt und gefüllt mit den gemappten Daten.
 	\end{itemize} \\
 	\hline
 	\textbf{Ablauf}    				& 
 	\begin{enumerate}
-		\item Die Funktion mapDaoToDto() ausführen mit dem DAO Objekt als Parameter.
-		\item Der erhaltene Wert mit dem DTO-Objekt vergleichten.
+		\item Die Funktion mapDaoToDto() ausführen, mit dem DAO-Objekt als Parameter.
+		\item Der erhaltene Wert wird mit dem DAO-Objekt verglichen.
 	\end{enumerate} \\
 	\hline
-	\textbf{Erwartetes Ergebnis}    & Es gibt keine Unterschiede zwischen dem generierten DTO- und dem bereits existierendem DTO-Objekt. \\
+	\textbf{Erwartetes Ergebnis}    & Es gibt keine Unterschiede zwischen dem generierten DTO- und dem bereits existierenden DAO-Objekt. \\
+	\hline
+\end{longtable}\label{tab:testfall-M3}
+
+\begin{longtable}{p{.3\textwidth}|p{.65\textwidth}}
+	\hline
+	\textbf{Testfall}               & \textbf{M4} \\
+	\hline
+	\textbf{Beschreibung}   		& Mapping von einer Liste aus DAOs zu einer Liste von DTOs \\
+	\hline
+	\textbf{Art}    				& Unit-Test \\
+	\hline
+	\textbf{Vorbedingungen}    		& Das Backend läuft. \\
+	\hline
+	\textbf{Konfiguration}   	 	& 
+	\begin{itemize}
+		\item Eine Liste von DAO-Objekten ist erstellt, und die Objekte sind mit Daten gefüllt.
+	\end{itemize} \\
+	\hline
+	\textbf{Ablauf}    				& 
+	\begin{enumerate}
+		\item Die Funktion listToMqInDto() ausführen, mit der Liste aus DAO-Objekten als Parameter.
+		\item Die erhaltenen Werte werden mit der Liste aus DAO-Objekten verglichen.
+	\end{enumerate} \\
+	\hline
+	\textbf{Erwartetes Ergebnis}    & Es gibt keine Unterschiede zwischen den generierten DTO- und den bereits existierenden DAO-Objekten. \\
 	\hline
 \end{longtable}\label{tab:testfall-M4}
+
 
 \subsection{Testfälle der Erweiterung Filter}
 
@@ -127,7 +127,7 @@ Alle Automatischen Tests werden auf 25 Einträge limitiert. Sie haben alle den F
 	\textbf{Ablauf}    				& 
 	\begin{enumerate}
 		\item Die Datenbank-Abfrage wird durchgeführt.
-		\item Die erhaltenen Daten werden überprüft mit den bereits erstellten Daten.
+		\item Die erhaltenen Daten werden mit den bereits erstellten Daten verglichen.
 	\end{enumerate} \\
 	\hline
 	\textbf{Erwartetes Ergebnis}    & Es gibt keine Unterschiede zwischen den gefilterten Daten aus der Datenbank und den erwarteten Daten. \\
@@ -138,7 +138,7 @@ Alle Automatischen Tests werden auf 25 Einträge limitiert. Sie haben alle den F
 	\hline
 	\textbf{Testfall}               & \textbf{M6} \\
 	\hline
-	\textbf{Beschreibung}   		& Datenbank-Abfrage für das Filtern von mehreren Filter \\
+	\textbf{Beschreibung}   		& Datenbank-Abfrage für das Filtern von mehreren Filtern \\
 	\hline
 	\textbf{Art}    				& Integration-Test \\
 	\hline
@@ -154,7 +154,7 @@ Alle Automatischen Tests werden auf 25 Einträge limitiert. Sie haben alle den F
 	\textbf{Ablauf}    				& 
 	\begin{enumerate}
 		\item Die Datenbank-Abfrage wird durchgeführt.
-		\item Die erhaltenen Daten werden überprüft mit den bereits erstellten Daten.
+		\item Die erhaltenen Daten werden mit den bereits erstellten Daten überprüft.
 	\end{enumerate} \\
 	\hline
 	\textbf{Erwartetes Ergebnis}    & Es gibt keine Unterschiede zwischen den gefilterten Daten aus der Datenbank und den erwarteten Daten. \\
@@ -165,7 +165,7 @@ Alle Automatischen Tests werden auf 25 Einträge limitiert. Sie haben alle den F
 	\hline
 	\textbf{Testfall}               & \textbf{M7} \\
 	\hline
-	\textbf{Beschreibung}   		& Generieren der SQL-Query für einen Filter \\
+	\textbf{Beschreibung}   		& Mapping von MqInFilterDto zu MqTableFilterQuery \\
 	\hline
 	\textbf{Art}    				& Unit-Test \\
 	\hline
@@ -173,44 +173,17 @@ Alle Automatischen Tests werden auf 25 Einträge limitiert. Sie haben alle den F
 	\hline
 	\textbf{Konfiguration}   	 	& 
 	\begin{itemize}
-		\item Der Filter wird gesetzt.
-		\item Das erwartete Ergebnis wird erstellt.
+		\item Die Filter werden in einem MqInFilter-Objekt gesetzt.
 	\end{itemize} \\
 	\hline
 	\textbf{Ablauf}    				& 
 	\begin{enumerate}
-		\item Die Funktion wird aufgerufen.
-		\item Die erhaltene SQL-Query wird überprüft.
+		\item Die Funktion toMqTableFilterQuery() wird ausgeführt mit, den Filtern als Parameter.
+		\item Die erhaltenen Daten werden mit den bereits erstellten Filtern überprüft.
 	\end{enumerate} \\
 	\hline
-	\textbf{Erwartetes Ergebnis}    & Die erhaltene SQL-Query stimmt mit dem erwarteten Ergebnis überein. \\
+	\textbf{Erwartetes Ergebnis}    & Es gibt keine Unterschiede zwischen den erstellten und den gemappten Filtern. \\
 	\hline
 \end{longtable}\label{tab:testfall-M7}
-
-\begin{longtable}{p{.3\textwidth}|p{.65\textwidth}}
-	\hline
-	\textbf{Testfall}               & \textbf{M8} \\
-	\hline
-	\textbf{Beschreibung}   		& Generieren der SQL-Query für mehrere Filter \\
-	\hline
-	\textbf{Art}    				& Unit-Test \\
-	\hline
-	\textbf{Vorbedingungen}    		& Das Backend läuft. \\
-	\hline
-	\textbf{Konfiguration}   	 	& 
-	\begin{itemize}
-		\item Die Filter werden gesetzt.
-		\item Das erwartete Ergebnis wird erstellt.
-	\end{itemize} \\
-	\hline
-	\textbf{Ablauf}    				& 
-	\begin{enumerate}
-		\item Die Funktion wird aufgerufen.
-		\item Die erhaltene SQL-Query wird überprüft.
-	\end{enumerate} \\
-	\hline
-	\textbf{Erwartetes Ergebnis}    & Die erhaltene SQL-Query stimmt mit dem erwarteten Ergebnis überein. \\
-	\hline
-\end{longtable}\label{tab:testfall-M8}
 
 \newpage
