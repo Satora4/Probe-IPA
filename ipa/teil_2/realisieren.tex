@@ -254,6 +254,18 @@ Das Endresultat der implementierten Funktionen und Klassen sieht anschliessend i
 \subsection{Fehlerbeschreibung}
 Durch einen Fehler, welcher nicht ermittelt werden konnte, wurde die Erweiterung pausiert. Der Fehler erscheint anfangs beim Aufrufen der Seite und hat den HTTP-Statuscode 500, was auf einen Server-internen Fehler hinweist. Es wurde nicht herausgefunden, was der Fehler war. Mit Debugging wurde versucht, den Request im Backend abzufangen und manuell durch die Funktionen zu gehen, aber der Request kam nicht im Backend an. Nach ein paar Stunden Debugging und Fehlersuche wurde entschieden, dass die Implementation der Erweiterung pausiert wird und zu einem späteren Zeitpunkt erneut ein neuer Versuch gestartet wird, mit einem Fachverantwortlichen.
 
+\subsection{Update des letzten Tages}
+Es wurde herausgefunden was der Fehler war. Der erste Request an das Backend wird nicht korrekt befüllt und verursacht durch das fehlgeschlagene Parsen von null einen Fehler. Die Lösung war ein (click)-Event bei dem button zu erstellen und die Funktion onSubmit() auszuführen. Diese Funktion ist aber noch nicht ganz Fehlerfrei und die Zeit fehlt um dies zu beheben.
+
+\begin{verbatim}
+	<div class="col-auto">
+	    <label class="d-block">&nbsp;</label>
+	    <button type="submit" class="btn btn-secondary" (click)="onSubmit()">
+	      Filtern
+	    </button>
+	</div>
+\end{verbatim}
+
 \section{ReleaseNotes schreiben}
 Um die Änderungen in den Master mergen zu können, muss man Release Notes für das implementierte Jira-Ticket schreiben. Für dieses Ticket wurden folgende Release Notes geschrieben:
 
