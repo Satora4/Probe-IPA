@@ -2,10 +2,32 @@
 Dieses Kapitel zeigt die in der IPERKA-Phase «Auswerten» durchgeführten Arbeiten auf. In dieser Phase wird eine Reflexion über die letzten Zehn Tage und die Verschiedenen Aspekte beschrieben. Das Schlusswort enthällt eine persönliche Bilanz und dient der Abrundung der Arbeit.
 
 \section{Projektmanagement}
+Die Projektmanagementmethode IPERKA eignete sich sehr gut für die Umsetzung der Anforderungen. Die sechs Phasen versicherten einen strukturierten und organisierten Ablauf der Probe-IPA. Durch das konnten Schritt für Schritt die Ziele erarbeitet werden und man wusste, was der nächste Schritt ist. Das Informieren half bei der Planung der verschiedenen Arbeitsschritte und es konnten so strukturiert die Aufgaben angegangen werden. In der Phase Realisieren wurde nochmals das erarbeitete reflektiert. Bei der Phase Kontrollieren konnte man die Struktur des Codes nochmals überdenken und bei Bedarf überarbeiten. Die Tests versicherten, dass die implementierte Lösung funktioniert. Und zum Schluss wurde in der Phase Auswerten das gesamte Projekt nochmals reflektiert und man kann die Arbeit abschliessen. Bei längerfristigen Projekten, die agiles Arbeiten erfordern, ist IPERKA eher weniger geeignet, da die Arbeiten durch die Phasen eher starr sind. Für eine Probe-IPA ist diese Methode aber gut geeignet, da das Ziel und das Enddatum klar definiert sind und nur eine Person beteiligt ist.
 
 \section{Zeitmanagement}
+Das Zeitmanagement wurde mithilfe eines Zeitplans ausgearbeitet. Der Zeitplan ist in 2-Stunden-Blöcken aufgeteilt. Die Beschriftung der Arbeitspakete wurde in der Phase Planen und anschliessend noch eine Schätzung zu jedem Arbeitspaket gemacht. Die Schätzungen waren meistens korrekt oder mit einer kleinen Abweichung. Am schwierigsten war die Zeit der Implementation zu schätzen. Da manchmal Fehler auftreten, die länger dauern könnten als eingeplant, kann es schnell zu Verzögerungen kommen. Die Zeitschätzung der Implementation hätte ein wenig besser sein können, da vergessen wurde, die Dokumentation einzubeziehen. Bei der Finalisierung der Dokumentation wurde extra ein wenig mehr Zeit mit ein berechnet, um einen möglichen Verzug abzudämpfen, sodass am Ende der Probe-IPA noch genug Zeit ist, um das Projekt korrekt abzuschliessen.
+
 \section{Arbeitsprozess}
+Während der Planung konnte schon im voraus Gedanken über die Implementierung gemacht werden und erleichterte so das Erreichen der Ziele. Die Planung ist einer der grössten Teile der Dokumentation und kostet auch viel Zeit. Am Ende lohnte es sich jedoch, sie nicht nur halbherzig zu schreiben, da während der Implementierung immer klar war, was noch fehlte und wie etwas zusammenhängt.
+
+Bei der Erweiterung war eigentlich auch klar, was genau gemacht werden muss. Im Backend funktionierte auch die Implementierung, aber da in den vergangenen dreieinhalb Jahren nicht so oft im Frontend gearbeitet wurde, war die Implementierung der Erweiterung eher erschwert, da eine Implementierung in diesem Stil so noch nie gemacht wurde. Die Zeit reichte auch nicht, um den Fehler während der Probe-IPA noch genauer anzugehen.
+
+Die Arbeit mit \LaTeX hat das Dokumentieren um einiges vereinfacht. Da \LaTeX vieles selbst generiert wie das Inhaltsverzeichnis, Glossar, Quellenverzeichnis und Styling, kann der Fokus von der Dokumentation alleine auf das Schreiben gelegt werden. Durch das konnten viele Informationen schnell und ohne grosse Schwierigkeiten in das Dokument geschrieben werden.
+
 \section{Ergebnisse der Probe-IPA}
-\section{Ausblick und mögliche Verbesserungen}
+Das Ziel der Probe-IPA war es, die Message-Queues im Web-GUI darzustellen. Die Tabelle soll auf 25 Einträge limitiert sein und zwei Aktionen bereitstellen. Die eine Aktion soll einen neuen Verarbeitungsversuch starten und die andere soll die ganze Nachricht anzeigen, da diese auf 50 Zeichen limitiert sein soll. Ausserdem konnte noch zwischen zwei Erweiterungen gewählt werden. Die Pagination und der Filter. Hier wurde sich für den Filter entschieden.
+
+Die Mindestanforderungen wurden erfolgreich implementiert. Die beiden Aktionen werden über ein Menü rechts von dem entsprechenden Eintrag angezeigt und funktionieren auch. Die Seite ist unter «Business Daten» → «Queue Messages (eingehend)» erreichbar. Das notwendige Filtern der Daten wird in der Datenbank gemacht, um die Performance hochzuhalten. Der Endpoint für die Erweiterung konnte auch implementiert werden und funktioniert auch für verschiedene Filterungen.
+
+Einzig allein das Frontend für die Erweiterung funktioniert nicht so, wie es sollte.
+
 \section{Schlusswort}
+Die Probe-IPA war eine spannende und lehrreiche Zeit. Das korrekte Planen der Aufgabe hat mir viel Zeit erspart, da ich mir nicht erst bei der Implementierung Gedanken über die Struktur machte. Es war auch mal etwas ganz anderes, mit der Dokumentation zu starten. Die ersten Tage habe ich nur an der Dokumentation gearbeitet. Vor der Probe-IPA freute ich mich nicht über diesen Teil, da ich eigentlich nicht gerne Texte schreibe. Ich dachte, ich werde am Ende eher zu wenig schreiben, weil viel Schreiben mir nicht liegt. Aber während der Dokumentation freute ich mich, dass ich so schnell vorwärtskam.
+
+Als ich endlich programmieren konnte, wurde mir schnell bewusst, wie wichtig die Schritte davor sind. Die ganze Vorbereitung hat sich schlussendlich ausgezahlt und ich konnte fast alles wie geplant implementieren, auch wenn es manchmal ein wenig anders als geplant ablief. Der Teil mit dem Frontend der Erweiterung war ein wenig frustrierend, da ich es mir ein wenig einfacher vorgestellt habe. Ich finde aber, dass ich korrekt gehandelt habe und zuerst mit der Dokumentation weitergemacht habe. Dieses Handelt hat dazu geführt, dass ich mit vielem fertig wurde und nicht eine unvollständige Arbeit abgeben muss.
+
+Ich würde mein Vorgehen wieder so umsetzen bei der IPA, mit ein paar Anpassungen entsprechend der Bewertung dieser Probe-IPA. Insgesamt hat mir diese Arbeit mehr Spass gemacht als ich dachte, da zu jedem Zeitpunkt der Probe-IPA mir immer bewusst war, was noch getan werden muss, wo ich stehe und wie viel Zeit ich noch übrig habe.
+
+Ausserdem danke ich für die Chance, eine simulierte IPA zu machen. Ich denke, diese Erfahrung wird mir bei der richtigen IPA viel helfen und einige Kleinigkeiten vereinfachen, da ich den ganzen Prozess schon einmal erleben durfte.
+
 \newpage
